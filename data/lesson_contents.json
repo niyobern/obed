@@ -1,0 +1,184 @@
+{
+    "0":
+    [
+        {
+            "item": "Ibisobanuro by'amagambo",
+            "key": "0",
+            "lesson_id": "0"
+        },
+        {
+            "item": "Impanuka",
+            "key": "1",
+            "lesson_id": "0"
+        },
+        {
+            "item": "Ibitegekwa, ibyakwa n'ibimenyetso",
+            "key": "2",
+            "lesson_id": "0"
+        },
+        {
+            "item": "Ibyiciro by'impushya",
+            "key": "3",
+            "lesson_id": "0"
+        }
+    ],
+    "1":
+    [
+        {
+            "item": "Uburumbarare bw' ibinyabiziga",
+            "key": "0",
+            "lesson_id": "1"
+        },
+        {
+            "item": "Imizigo",
+            "key": "1",
+            "lesson_id": "1"
+        },
+        {
+            "item": "Uburemere ntarengwa",
+            "key": "2",
+            "lesson_id": "1"
+        },
+        {
+            "item": "Ibinyabiziga bikurururana",
+            "key": "3",
+            "lesson_id": "1"
+        },
+        {
+            "item": "Ibyerekeye feri",
+            "key": "4",
+            "lesson_id": "1"
+        },
+        {
+            "item": "Amatara n'ibimenyetso",
+            "key": "5",
+            "lesson_id": "1"
+        },
+        {
+            "item": "Amahoni",
+            "key": "6",
+            "lesson_id": "1"
+        },
+        {
+            "item": "Uturebanyuma",
+            "key": "7",
+            "lesson_id": "1"
+        },
+        {
+            "item": "Ibirahuri",
+            "key": "8",
+            "lesson_id": "1"
+        },
+        {
+            "item": "Ibikoresho by'ingenzi",
+            "key": "9",
+            "lesson_id": "1"
+        },
+        {
+            "item": "Umwotsi, imyuka n' insaku",
+            "key": "10",
+            "lesson_id": "1"
+        }
+    ],
+    "2":
+    [
+        {
+            "item": "Iby' ibanze ku byapa n'ibimenyetso",
+            "key": "0",
+            "lesson_id": "2"
+        },
+        {
+            "item": "Ibyapa biburira n'ibyo gutambuka mbere",
+            "key": "1",
+            "lesson_id": "2"
+        },
+        {
+            "item": "Ibyapa bibuza cyangwa bitegeka",
+            "key": "2",
+            "lesson_id": "2"
+        },
+        {
+            "item": "Ibyapa biyobora",
+            "key": "3",
+            "lesson_id": "2"
+        },
+        {
+            "item": "Ibyapa ndanga",
+            "key": "4",
+            "lesson_id": "2"
+        },
+        {
+            "item": "Ibyapa by'inyongera",
+            "key": "5",
+            "lesson_id": "2"
+        }
+    ],
+    "3":
+    [
+        {
+            "item": "Inkomane, Gutambuka, Kunyuranaho",
+            "key": "0",
+            "lesson_id": "3"
+        },
+        {
+            "item": "Guhindura ikerekezo",
+            "key": "1",
+            "lesson_id": "3"
+        },
+        {
+            "item": "Umuvuduko w'ibinyabiziga",
+            "key": "2",
+            "lesson_id": "3"
+        },
+        {
+            "item": "Guhagarara umwanya muto n'umunini",
+            "key": "3",
+            "lesson_id": "3"
+        },
+        {
+            "item": "Ibinyabiziga ndakumirwa",
+            "key": "4",
+            "lesson_id": "3"
+        },
+        {
+            "item": "Kwambuka amateme n'ibyome",
+            "key": "5",
+            "lesson_id": "3"
+        },
+        {
+            "item": "Amatara",
+            "key": "6",
+            "lesson_id": "3"
+        },
+        {
+            "item": "Imburira n'imikandara",
+            "key": "7",
+            "lesson_id": "3"
+        },
+        {
+            "item": "Ibinyabiziga bihererekanye",
+            "key": "8",
+            "lesson_id": "3"
+        },
+        {
+            "item": "Ibinyabiziga bikurururana",
+            "key": "9",
+            "lesson_id": "3"
+        },
+        {
+            "item": "Amategeko y'abanyamaguru",
+            "key": "10",
+            "lesson_id": "3"
+        },
+        {
+            "item": "Amategeko y'inyamanswa",
+            "key": "11",
+            "lesson_id": "3"
+        },
+        {
+            "item": "Amategeko y'amagare",
+            "key": "12",
+            "lesson_id": "3"
+        }
+    ]
+}
