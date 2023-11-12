@@ -4,16 +4,22 @@ import LeftSide from "./sidebar"
 import Right from "./sideRight"
 
 import { useRouter } from "next/router"
+import Footer from "./footer"
 export default  function Layout( { children, right, title } ){
     const router = useRouter()
     const route = router.pathname
     const routeParts =  route.split("/")
     const pageName = routeParts[routeParts.length-1]
     if (route == "/"){
-        return <>{ children }</>
+        return (
+        <div className="relative flex flex-col gap-4 w-full">
+        { children }
+        <div className="static bottom-0 w-full"><Footer/></div>
+        </div>
+        )
     }
     return (
-        <>
+        <div className="relative">
             <Head>
                 <title>{`Jiprovisional | ${pageName.toUpperCase()}`}</title>
                 <link rel="shortcut icon" href="../images/logo.jpg" className="rounded-full"/>
@@ -34,6 +40,7 @@ export default  function Layout( { children, right, title } ){
                   {right && <Right tests={right.tests} cards={right.cards} contents={right.contents}/>}
                 </div>
             </div>
-        </>
+            <div className="static bottom-0 w-full"><Footer/></div>
+        </div>
     )
 }
