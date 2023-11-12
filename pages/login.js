@@ -4,6 +4,7 @@ import { AiOutlineMenu } from 'react-icons/ai';
 import { MdCall } from 'react-icons/md';
 import { FaLock } from 'react-icons/fa';
 import Link from "next/link";
+import axios from "axios";
 
 export default function Login(){
     const [phone, setPhone] = useState("")
@@ -16,6 +17,14 @@ export default function Login(){
     function handlePassword(e){
         const text = e.target.value
         setPassword(text)
+    }
+    function handleSubmit(e){
+        e.preventDefault()
+        const data = new FormData()
+        data.append("username", phone)
+        data.append("password", password)
+        axios.post("https://nvb_backend-1-z3745144.deta.app/login", data)
+        .then((res) => localStorage.setItem("token", res.data.token))
     }
     return (
         <div className="h-full flex flex-col gap-4 relative">
@@ -76,7 +85,7 @@ export default function Login(){
                         <span className="text-sm">Munyibuke</span>
                     </div>
                     <div className="flex flex-col pt-8 gap-4">
-                        <div className="border-2 p-2 border-blue-600 rounded text-blue-600 text-center font-bold font-bold hover:text-white hover:bg-blue-600 cursor-pointer">Injira</div>
+                        <div onClick={handleSubmit} className="border-2 p-2 border-blue-600 rounded text-blue-600 text-center font-bold font-bold hover:text-white hover:bg-blue-600 cursor-pointer">Injira</div>
                         <div className="flex justify-center text-sm gap-2">
                             <span>Ntiwibuka ijambobanga?</span>
                             <span>|</span>

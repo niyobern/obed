@@ -10,6 +10,18 @@ export default function Name(){
         const text = e.target.value
         setName(text)
     }
+    function handleSubmit(e){
+        e.preventDefault()
+        const phone = localStorage.getItem("phone")
+        if (!phone){
+            return false
+        }
+        axios.post("https://nvb_backend-1-z3745144.deta.app/users/password", {"phone": phone, "name": name})
+        .then((res) => {
+            localStorage.setItem("phone", res.data.phone)
+            router.push("/home")
+        })
+    }
     return (
         <div className="h-full flex flex-col gap-4 relative">
             <div className="bg-indigo-950 w-full flex flex-col justify-between fixed z-50">
@@ -61,7 +73,7 @@ export default function Name(){
                         <input type="text" required placeholder="name" value={name} onChange={handleName}  className="font-medium outline-none"/>
                     </div>
                     <div className="flex flex-col pt-8 gap-4">
-                        <div className="border-2 p-2 border-blue-600 rounded text-blue-600 text-center font-bold font-bold hover:text-white hover:bg-blue-600 cursor-pointer">Emeza amazina yawe</div>
+                        <div onClick={handleSubmit} className="border-2 p-2 border-blue-600 rounded text-blue-600 text-center font-bold font-bold hover:text-white hover:bg-blue-600 cursor-pointer">Emeza amazina yawe</div>
                     </div>
                 </div>
             </div>

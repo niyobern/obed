@@ -1,62 +1,33 @@
-import { BsFillPlayFill } from "react-icons/bs";
+import { useRouter } from "next/router";
+import axios from "axios";
+import Plan from "@/components/plan";
+import { useState, useEffect } from "react";
+
 export default function Ikofi(){
+    const router = useRouter()
+    const [days, setDays] = useState(0)
+    const [plans, setPlans] = useState([])
+    useEffect(() => {
+        const token = JSON.parse(localStorage.getItem("token"))
+        axios.get("https://nvb_backend-1-z3745144.deta.app/users/details", { "headers": { "Authorization": token}})
+        .then((res) => setDays(res.data.days_remaining))
+        .catch((err) => router.replace("/login"))
+        axios.get("https://nvb_backend-1-z3745144.deta.app/subscription/package")
+        .then((res) => setPlans(res.data))
+    
+    }, [router])
     return (
         <div className="flex flex-col gap-4">
             <div className="flex flex-col gap-4">
                 <span className="font-medium text-sm">Igihe usigaranye</span>
                 <div className="border border-gray-200 flex flex-col text-xs font-medium w-fit py-1 px-16 rounded items-center">
-                    <span>6</span>
+                    <span>{days}</span>
                     <span>iminsi</span>
                 </div>
                 <span className="font-medium text-sm">Gura ifatabuguzi</span>
             </div>
             <div className="flex flex-col md:flex-row gap-8">
-                <div className="flex flex-col rounded border border-gray-200 w-full">
-                    <div className="bg-gray-100 p-2 text-lg font-medium border-b border-gray-200 w-full text-center">
-                        <span>Ukwezi 1</span>
-                    </div>
-                    <div className="flex flex-col gap-6 p-6">
-                        <span className="text-center font-medium text-xl">Rwf 4000</span>
-                        <div className="flex flex-col justify-start text-sm">
-                            <div className="flex gap-1 items-center">
-                                <BsFillPlayFill className="h-4 w-4 flex-none" color="blue"/>
-                                <span>Ukwezi 1</span>
-                            </div>
-                            <div className="flex gap-1 items-center">
-                                <BsFillPlayFill className="h-4 w-4 flex-none" color="blue"/>
-                                <span>Ubufasha kuri telefoni</span>
-                            </div>
-                            <div className="flex gap-1 items-center">
-                                <BsFillPlayFill className="h-4 w-4 flex-none" color="blue"/>
-                                <span>Amasomo n&apos;amasuzumabumenyi yoseUbufasha kuri telefoni</span>
-                            </div>
-                        </div>
-                        <div className="border-2 border-black text-lg font-medium w-full rounded text-center">Gura</div>
-                    </div>
-                </div>
-                <div className="flex flex-col rounded border border-gray-200 w-full">
-                    <div className="bg-gray-100 p-2 text-lg font-medium border-b border-gray-200 w-full text-center">
-                        <span>Ukwezi 1</span>
-                    </div>
-                    <div className="flex flex-col gap-6 p-6">
-                        <span className="text-center font-medium text-xl">Rwf 4000</span>
-                        <div className="flex flex-col justify-start text-sm">
-                            <div className="flex gap-1 items-center">
-                                <BsFillPlayFill className="h-4 w-4 flex-none" color="blue"/>
-                                <span>Ukwezi 1</span>
-                            </div>
-                            <div className="flex gap-1 items-center">
-                                <BsFillPlayFill className="h-4 w-4 flex-none" color="blue"/>
-                                <span>Ubufasha kuri telefoni</span>
-                            </div>
-                            <div className="flex gap-1 items-center">
-                                <BsFillPlayFill className="h-4 w-4 flex-none" color="blue"/>
-                                <span>Amasomo n&apos;amasuzumabumenyi yoseUbufasha kuri telefoni</span>
-                            </div>
-                        </div>
-                        <div className="border-2 border-black text-lg font-medium w-full rounded text-center">Gura</div>
-                    </div>
-                </div>
+                {plans.map( (item, index) => <Plan plan={item} key={index}/>)}
             </div>
         </div>
     )

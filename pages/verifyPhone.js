@@ -10,6 +10,18 @@ export default function VerifyPhone() {
         const value = text.replace(/\D/g, "")
         setPhone(value)
     }
+    function handleSubmit(e){
+        e.preventDefault()
+        const phone = localStorage.getItem("phone")
+        if (!phone){
+            return false
+        }
+        axios.post("https://nvb_backend-1-z3745144.deta.app/users/code", {"phone": phone, "code": code})
+        .then((res) => {
+            localStorage.setItem("phone", res.data.phone)
+            router.push("/password")
+        })
+    }
     return (
         <div className="h-full flex flex-col gap-4 relative">
         <div className="bg-indigo-950 w-full flex flex-col justify-between fixed z-50">
@@ -61,7 +73,7 @@ export default function VerifyPhone() {
                     <input type="text" required placeholder="000 000" value={code} onChange={handleCode}  className="font-medium outline-none"/>
                 </div>
                 <div className="flex flex-col pt-8 gap-4">
-                    <div className="border-2 p-2 border-blue-600 rounded text-blue-600 text-center font-bold hover:text-white hover:bg-blue-600 cursor-pointer">Komeza</div>
+                    <div onClick={handleSubmit} className="border-2 p-2 border-blue-600 rounded text-blue-600 text-center font-bold hover:text-white hover:bg-blue-600 cursor-pointer">Komeza</div>
                 </div>
             </div>
         </div>

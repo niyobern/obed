@@ -1,9 +1,8 @@
+import axios from "axios";
 import Image from "next/image"
 import { useState } from "react";
 import { AiOutlineMenu } from 'react-icons/ai';
-import { MdCall } from 'react-icons/md';
 import { FaLock } from 'react-icons/fa';
-import Link from "next/link";
 
 export default function Password(){
     const [password, setPassword] = useState("")
@@ -11,6 +10,25 @@ export default function Password(){
     function handlePassword(e){
         const text = e.target.value
         setPassword(text)
+    }
+    function handleSubmit(e){
+        e.preventDefault()
+        const phone = localStorage.getItem("phone")
+        if (!phone){
+            return false
+        }
+        const data = new FormData()
+        data.append("username", phone)
+        data.append("password", password)
+        axios.post("https://nvb_backend-1-z3745144.deta.app/users/password", {"phone": phone, "password": password})
+        .then((res) => {
+            localStorage.setItem("phone", res.data.phone)
+            axios.post("https://nvb_backend-1-z3745144.deta.app/login", data)
+            .then((res) => {
+                localStorage.setItem("token", res.data.token)
+                router.push("/name")
+            })
+        })
     }
     return (
         <div className="h-full flex flex-col gap-4 relative">
@@ -63,7 +81,7 @@ export default function Password(){
                         <input type="password" required placeholder="Password" onFocus={() => phone === "07xx xxx xxx" && setPhone("")} value={password} onChange={handlePassword}  className="font-medium outline-none"/>
                     </div>
                     <div className="flex flex-col pt-8 gap-4">
-                        <div className="border-2 p-2 border-blue-600 rounded text-blue-600 text-center font-bold font-bold hover:text-white hover:bg-blue-600 cursor-pointer">Emeza ijambobanga</div>
+                        <div onClick={handleSubmit} className="border-2 p-2 border-blue-600 rounded text-blue-600 text-center font-bold font-bold hover:text-white hover:bg-blue-600 cursor-pointer">Emeza ijambobanga</div>
                     </div>
                 </div>
             </div>

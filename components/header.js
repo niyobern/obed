@@ -1,4 +1,6 @@
 import Image from "next/image";
+import Link from "next/link";
+
 export default function Header(){
     return (
         <div className="flex flex-col gap-4 relative">
@@ -10,7 +12,7 @@ export default function Header(){
                 />
             </div>
             <div className="grid grid-cols-2 md:flex bg-gray-100">
-                <div className="flex flex-col items-center text-center w-full md:w-full hover:bg-gray-200 py-4">
+                <Link href="/courses" className="flex flex-col items-center text-center w-full md:w-full hover:bg-gray-200 py-4 cursor-pointer">
                     <Image
                         src="/images/resume.svg"
                         alt="Header slide"
@@ -19,8 +21,8 @@ export default function Header(){
                     />
                     <span className="text-lg font-medium">Subukura</span>
                     <span className="uppercase text-sm">Kwiga</span>
-                </div>
-                <div className="flex flex-col items-center text-center w-full md:w-full hover:bg-gray-200 py-4">
+                </Link>
+                <Link href="/courses" className="flex flex-col items-center text-center w-full md:w-full hover:bg-gray-200 py-4 cursor-pointer">
                     <Image
                         src="/images/course.svg"
                         alt="Header slide"
@@ -29,8 +31,8 @@ export default function Header(){
                     />
                     <span className="text-lg font-medium">Amasomo</span>
                     <span className="uppercase text-sm">yange</span>
-                </div>
-                <div className="flex flex-col items-center text-center w-full md:w-full hover:bg-gray-200 py-4">
+                </Link>
+                <Link href="/tests" className="flex flex-col items-center text-center w-full md:w-full hover:bg-gray-200 py-4 cursor-pointer">
                     <Image
                         src="/images/test.svg"
                         alt="Header slide"
@@ -39,8 +41,8 @@ export default function Header(){
                     />
                     <span className="text-lg font-medium">Isuzuma</span>
                     <span className="uppercase text-sm">bumenyi</span>
-                </div>
-                <div className="flex flex-col items-center text-center w-full md:w-full hover:bg-gray-200 py-4">
+                </Link>
+                <Link href="/ikofi" className="flex flex-col items-center text-center w-full md:w-full hover:bg-gray-200 py-4 cursor-pointer">
                     <Image
                         src="/images/wallet.svg"
                         alt="Header slide"
@@ -49,7 +51,7 @@ export default function Header(){
                     />
                     <span className="text-lg font-medium">Ikofi</span>
                     <span className="uppercase text-sm">ayo nsigaranye</span>
-                </div>
+                </Link>
             </div>
         </div>
     )

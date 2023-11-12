@@ -1,14 +1,28 @@
 import { MdCall } from 'react-icons/md';
 import { useState } from "react";
 import Image from "next/image"
+import { LuArrowRightToLine } from "react-icons/lu";
 import { AiOutlineMenu } from 'react-icons/ai';
+import { BsFillPersonPlusFill } from 'react-icons/bs';
+import { BiWorld } from 'react-icons/bi';
+import Link from "next/link";
+import { useRouter } from 'next/router';
 
-export default function Register() {
+export default function Register( { loggedIn }) {
     const [phone, setPhone] = useState("")
+    const router = useRouter()
     function handlePhone(e){
         const text = e.target.value
         const value = text.replace(/\D/g, "")
         setPhone("07" + value.slice(2,10))
+    }
+    function handleSubmit(e){
+        e.preventDefault()
+        axios.post(`https://nvb_backend-1-z3745144.deta.app/users/?phone=${phone}`)
+        .then((res) => {
+            localStorage.setItem("phone", res.data)
+            router.push("/verifyPhone")
+        })
     }
     return (
         <div className="h-full flex flex-col gap-4 relative">
@@ -26,9 +40,15 @@ export default function Register() {
                     <h1 className="text-white text-center self-center text-xl font-bold">JIPROVISIONAL</h1>
                 </div>
                 <div className="hidden md:flex gap-4 text-white items-center">
-                    <div className="border-2 border-sky-500 py-1 px-2 rounded-sm">{"Iyandikishe"}</div>
-                    <div className="border-2 border-sky-500 py-1 px-2 rounded-sm">{"Injira"}</div>
-                    <div className="border-2 border-sky-500 py-1 px-2 rounded-sm">Ikinyarwanda</div>
+                    <Link href={loggedIn ? "/home": "/register"} className="border-2 border-sky-500 py-1 px-2 rounded-sm flex gap-2 items-center hover:bg-sky-200 cursor-pointer hover:text-black">
+                        <BsFillPersonPlusFill/>
+                        {loggedIn ? "Jya aho bigira": "Iyandikishe"}</Link>
+                    <Link href={loggedIn ? "/logout": "/login"} className="border-2 border-sky-500 py-1 px-2 rounded-sm flex gap-2 items-center hover:bg-sky-200 cursor-pointer hover:text-black">
+                        <LuArrowRightToLine/>
+                        {loggedIn ? "Sohoka": "Injira"}</Link>
+                    <Link href="/" className="border-2 border-sky-500 py-1 px-2 rounded-sm flex gap-2 items-center hover:bg-sky-200 cursor-pointer hover:text-black">
+                        <BiWorld/>
+                        Ikinyarwanda</Link>
                 </div>
                 <AiOutlineMenu color="white" className="h-6 w-6 flex md:hidden"/>
             </div>
@@ -61,7 +81,7 @@ export default function Register() {
                     <input type="phone" required placeholder="07xx xxx xxx" onFocus={() => phone === "07xx xxx xxx" && setPhone("")} value={phone.slice(0,10)} onChange={handlePhone}  className="font-medium outline-none"/>
                 </div>
                 <div className="flex flex-col pt-8 gap-4">
-                    <div className="border-2 p-2 border-blue-600 rounded text-blue-600 text-center font-bold hover:text-white hover:bg-blue-600 cursor-pointer">Ohereza code kuri phone yawe</div>
+                    <div onClick={handleSubmit} className="border-2 p-2 border-blue-600 rounded text-blue-600 text-center font-bold hover:text-white hover:bg-blue-600 cursor-pointer">Ohereza code kuri phone yawe</div>
                 </div>
             </div>
         </div>
