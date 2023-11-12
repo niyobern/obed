@@ -1,5 +1,5 @@
 import TestGrid from "/components/test/testgrid";
-import TestBanner from "/components/test/Testbanner";
+import TestBanner from "/components/test/testbanner";
 import { useState } from "react";
 
 export default function Tests(){
