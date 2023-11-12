@@ -1,11 +1,11 @@
 import Image from "next/image"
 export default function NavBar({title}){
     return (
-        <div className="bg-indigo-950 flex px-2 md:px-24 lg:px-32 xl:px-48 py-2 justify-between text-white sticky top-0 z-10">
+        <div className="bg-indigo-950 flex px-2 md:px-24 lg:px-32 xl:px-48 py-2 justify-between text-white top-0">
             <div className="flex gap-1 text-white items-center">
                 <div className="flex gap-1">
                     <Image
-                        src="/images/logo.jpg"
+                        src="/images/logo.png"
                         alt="Logo"
                         className="h-10 w-fit rounded-full"
                         width={30}

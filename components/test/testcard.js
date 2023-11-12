@@ -2,7 +2,7 @@ import Image from "next/image"
 import { useState } from "react"
 import { IoMdRadioButtonOff, IoMdRadioButtonOn } from "react-icons/io"
 
-export default function TestCard({ question, answer, back, index, total }){
+export default function TestCard({ question, answer, back, index, total, slug }){
     const [choice, setChoice] = useState(-1)
     return (
         <div className="bg-white rounded w-full md:w-11/12 h-5/6 lg:w-2/3 flex flex-col overflow-auto">
@@ -16,7 +16,7 @@ export default function TestCard({ question, answer, back, index, total }){
                     {question.image &&  <div className="flex flex-col items-center">
                       <Image
                         alt="Question Image"
-                        src={question.image}
+                        src={`/images/tests/${slug}/${Number(question.image.slice(0,-3) - 1)}.${question.image.slice(-3)}`}
                         width={500}
                         height={500}
                         className="h-48 w-fit"
@@ -32,7 +32,7 @@ export default function TestCard({ question, answer, back, index, total }){
                         <span>{item}</span>
                     </div>
                     )}
-                    {(question.answers[0].slice(-3) !== "png" || question.answers[0].slice(-3) !== "gpg") && <div className="flex justify-center hover:bg-blue-200 border-x border-gray-200 p-2 py-1 border-b-2 border-b-blue-600" onClick={() => setChoice(choice === 0 ? -1 : 0)}>
+                    {(question.answers[0].slice(-3) === "png" || question.answers[0].slice(-3) === "gpg") && <div className="flex justify-center hover:bg-blue-200 border-x border-gray-200 p-2 py-1 border-b-2 border-b-blue-600" onClick={() => setChoice(choice === 0 ? -1 : 0)}>
                       <Image
                         alt="Question Image"
                         src="/images/Kinya-thumb.png"

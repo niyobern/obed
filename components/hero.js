@@ -6,7 +6,7 @@ export default function Hero({ loggedIn }){
             <div className="flex justify-between md:w-2/3 mx-auto py-6">
                 <div className="flex gap-2">
                     <Image
-                      src="/images/logo.jpg"
+                      src="/images/logo.png"
                       alt="Logo"
                       className="h-10 w-10 rounded-full"
                       width={40}

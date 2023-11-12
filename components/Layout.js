@@ -18,9 +18,13 @@ export default  function Layout( { children, right, title } ){
                 <title>{`Jiprovisional | ${pageName.toUpperCase()}`}</title>
                 <link rel="shortcut icon" href="../images/logo.jpg" className="rounded-full"/>
             </Head>
-            <NavBar title={title}/>
+            <div className="fixed w-full z-10"><NavBar title={title}/></div>
+            <div className="sticky w-full"><NavBar title={title}/></div>
             <div className="flex flex-col md:grid grid-cols-4 divide-x divide-solid divide-gray-300 min-h-screen">
                 <div className="col-span-1">
+                    {/* <LeftSide/> */}
+                </div>
+                <div className="col-span-1 fixed">
                     <LeftSide/>
                 </div>
                 <div className="col-span-2 flex flex-col p-2 gap-4 md:gap-8 pb-8">

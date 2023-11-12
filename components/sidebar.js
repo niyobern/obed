@@ -9,7 +9,7 @@ export default function LeftSide(){
                     alt="Profile"
                     width={50}
                     height={50}
-                    className="w-full h-full rounded-full"
+                    className="w-12 h-12 lg:w-14 lg:h-14 rounded-full"
                     />
                 </div>
                 <div className="flex flex-col">
@@ -37,7 +37,7 @@ export default function LeftSide(){
                 <svg className="w-6 h-6 text-black" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="wallet" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M461.2 128H80c-8.84 0-16-7.16-16-16s7.16-16 16-16h384c8.84 0 16-7.16 16-16 0-26.51-21.49-48-48-48H64C28.65 32 0 60.65 0 96v320c0 35.35 28.65 64 64 64h397.2c28.02 0 50.8-21.53 50.8-48V176c0-26.47-22.78-48-50.8-48zM416 336c-17.67 0-32-14.33-32-32s14.33-32 32-32 32 14.33 32 32-14.33 32-32 32z"></path></svg>
                 <span className="font-bold">Ikofi</span>
             </div>
-            <div className="p-2 border-2 border-black flex justify-between w-3/4">
+            <div className="p-2 border-2 border-black flex justify-between w-full">
                 <svg className="w-6 h-6 text-black" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="plus" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path></svg>
                 <span className="font-bold tex-lg">Isomo Rishya</span>
             </div>
