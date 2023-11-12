@@ -3,19 +3,9 @@ import logo from "../../public/images/Kinya-thumb.png"
 import { useRouter } from "next/router";
 import { useState } from "react";
 
-export async function getServerSideProps() {
-    const title = "Amasomo mfata"
-    const right = { 
-        contents: [{ 
-            lesson: "Igice cya 1: Ubusobanuro",
-            contents: ["Ibisobanuro by'amagambo", "Ibisobanuro by'amagambo", "Ibisobanuro by'amagambo"]
-        }] 
-    } 
-    return { props: { right, title } }
-  }
 export default function Courses(){
     const router = useRouter()
-    const [lastNote, setLastNote] = useState("/1")
+    const [lastNote, setLastNote] = useState("/0/0")
     return (
         <div className="flex flex-col h-full w-full md:w-1/3 gap-2">
             <div onClick={() => router.push(`/courses/${lastNote}`)} className="cursor-pointer hover:shadow hover:shadow-sky-200 h-1/2 border border-gray-300">
