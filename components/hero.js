@@ -35,7 +35,7 @@ export default function Hero({ loggedIn }){
                   alt="Man on comp"
                   width={600}
                   height={400}
-                  className="h-12 w-fit"
+                  className="h-full w-fit"
                 />
             </div>
         </div>

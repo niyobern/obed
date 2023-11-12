@@ -2,17 +2,17 @@ import NavBar from "./navbar"
 import Head from "next/head"
 import LeftSide from "./sidebar"
 import Right from "./sideRight"
-
 import { useRouter } from "next/router"
 import Footer from "./footer"
+
 export default  function Layout( { children, right, title } ){
     const router = useRouter()
     const route = router.pathname
     const routeParts =  route.split("/")
     const pageName = routeParts[routeParts.length-1]
-    if (route == "/"){
+    if (route === "/" || route === "/login" || route === "/register" || route === "/password" || route === "/name" || route === "/verifyPhone"){
         return (
-        <div className="relative flex flex-col gap-4 w-full">
+        <div className="relative flex flex-col gap-4 w-full h-screen">
         { children }
         <div className="static bottom-0 w-full"><Footer/></div>
         </div>
@@ -30,7 +30,7 @@ export default  function Layout( { children, right, title } ){
                 <div className="col-span-1">
                     {/* <LeftSide/> */}
                 </div>
-                <div className="col-span-1 fixed">
+                <div className="hidden md:flex col-span-1 fixed">
                     <LeftSide/>
                 </div>
                 <div className="col-span-2 flex flex-col p-2 gap-4 md:gap-8 pb-8">
