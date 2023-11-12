@@ -14,7 +14,7 @@ export default function Konti(){
     const router = useRouter()
     
     useEffect(() => {
-        const token = JSON.parse(localStorage.getItem("token"))
+        const token = localStorage.getItem("token")
         axios.get("https://nvb_backend-1-z3745144.deta.app/details", { "headers": { "Authorization": token}})
         .then((res) => setuser({phone: res.data.phone, name: res.data.name}))
         .catch((err) => router.replace("/login"))

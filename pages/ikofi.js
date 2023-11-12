@@ -8,7 +8,7 @@ export default function Ikofi(){
     const [days, setDays] = useState(0)
     const [plans, setPlans] = useState([])
     useEffect(() => {
-        const token = JSON.parse(localStorage.getItem("token"))
+        const token = localStorage.getItem("token")
         axios.get("https://nvb_backend-1-z3745144.deta.app/users/details", { "headers": { "Authorization": token}})
         .then((res) => setDays(res.data.days_remaining))
         .catch((err) => router.replace("/login"))

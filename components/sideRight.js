@@ -1,30 +1,27 @@
 import { useState } from 'react';
 import { AiOutlineMenu } from 'react-icons/ai';
 import Content from './content';
+import axios from 'axios';
 
-export default function Right({ contents, tests, cards }){
-  const [newContents, setNewContents] = useState(contents)
-  const [checked, setChecked] = useState({})
+export default function Right({ contents, tests, cards, selected }){
+  const [newContents, setNewContents] = useState(contents || [])
+  const [checked, setChecked] = useState(selected || [])
 
   function handleFocus(index){
     const contentsCopy = [...newContents]
     contentsCopy[index].focused = !contentsCopy[index]?.focused
     setNewContents(contentsCopy)
   }
-  function handleCheck(index, contentIndex){
-    const checkedCopy = {...checked}
-    if (index in checkedCopy){
-      checkedCopy[index][contentIndex]
-      if (contentIndex in checkedCopy[index]){
-        delete checkedCopy[index][contentIndex]
-      } else {
-        checkedCopy[index][contentIndex] = true
-      }
-    } else {
-      checkedCopy[index]= {}
-      checkedCopy[index][contentIndex] = true
-    }
+  function handleCheck(slug){
+    const checkedCopy = [...checked]
+    const index = checkedCopy.findIndex((value) => value === slug)
+    if (index >= 0){
+      checkedCopy.splice(index, 1)
+    } else { checkedCopy.push(slug) }
     setChecked(checkedCopy)
+    const token = localStorage.getItem("token")
+    axios.post('https://nvb_backend-1-z3745144.deta.app/study/check', {checked: checkedCopy}, {headers: {"Authorization": token}})
+    .then((res) => console.log(res.data))
   }
   if (tests){
     return  (
@@ -50,7 +47,7 @@ export default function Right({ contents, tests, cards }){
           <AiOutlineMenu color="black" className="h-4 w-4"/>
           <span className='text-sm font-medium'>Ibice bigize isomo</span>
         </div>
-        { newContents.map((item, index) => <Content contentIndex={index} focus={handleFocus} key={index} lesson={item.lesson} contents={item.contents} focused={item.focused || false} selected={checked[index]} check={handleCheck}/>)}
+        { newContents.map((item, index) => <Content contentIndex={index} focus={handleFocus} key={index} lesson={item.lesson} contents={item.contents} focused={item.focused || false} selected={checked} check={handleCheck}/>)}
       </div>
     )
   }

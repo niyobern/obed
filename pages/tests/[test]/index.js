@@ -4,6 +4,7 @@ import path from "path";
 import { useEffect, useState } from "react"
 import { readFile } from 'fs/promises';
 import {  useRouter } from 'next/router'
+import axios from "axios";
 
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -37,6 +38,11 @@ export default function Test({ questions, slug }){
     const [answers, setAnswers] = useState([])
     const [index, setIndex] = useState(0)
     const router = useRouter()
+    const [lastDay, setLastDay] = useState("2023-03-14")
+    const [lastTime, setLastTime] = useState("12:34:53")
+    const [length, setLength] = useState(20)
+    const [lastScore, setLastScore] = useState(2)
+
     function handleAnswer(number){
         const item = {...questions[number], "index": -1}
         const answersCopy = [...answers]
@@ -47,6 +53,8 @@ export default function Test({ questions, slug }){
         if (index < 19){
             setIndex(index +1)
         } else {
+            axios.post("/api/test", {"test_id": slug, "answers": cleanAnswers.concat([item])})
+            .then( (response) => console.log(response.data))
             router.replace("/home")
         }
         setAnswers(cleanAnswers.concat([item]))
@@ -54,7 +62,16 @@ export default function Test({ questions, slug }){
     if (modal){
         return (
             <div className="z-50 fixed top-0 left-0 bg-gray-900 bg-opacity-50 w-screen h-screen flex items-center justify-center">
-                <TestCard slug={slug} question={questions[index]} answer={handleAnswer} back={() => setIndex(index-1)} index={index} total={questions.length}/>
+                <TestCard 
+                  slug={slug} 
+                  question={questions[index]} 
+                  answer={handleAnswer} back={() => setIndex(index-1)} 
+                  index={index} total={questions.length}
+                  latestScore={lastScore}
+                  lastDay={lastDay}
+                  lastTime={lastTime}
+                  length={length}
+                />
             </div>
         )
     }

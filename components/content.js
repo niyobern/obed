@@ -1,4 +1,5 @@
-export default function Content({lesson, contents, focused, focus, contentIndex, check, selected}){
+import Link from "next/link"
+export default function Content({lesson, contents, focused, focus, contentIndex, check, selected }){
     return (
         <div className="flex flex-col">
             <div className="border-b-2 border-gray-300 p-3">
@@ -8,8 +9,8 @@ export default function Content({lesson, contents, focused, focus, contentIndex,
             {focused && contents.map((item, index) => (
                 <div key={index}>
                     <div className='flex gap-4 items-center'>
-                        <input type='checkbox' checked={selected !== undefined && index in selected ? true : false} onChange={() => check(contentIndex, index)}/>
-                        <span className='text-sm font-medium leading-none'>{item}</span>
+                        <input type='checkbox' checked={selected.findIndex((value) => value === `${contentIndex}/${index}`) >= 0 ? true : false} onChange={() => check(`${contentIndex}/${index}`)}/>
+                        <Link href={`/courses/${contentIndex}/${index}`} className='text-sm font-medium leading-none'>{item}</Link>
                     </div>
                 </div>
             ))}

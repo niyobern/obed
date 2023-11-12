@@ -1,5 +1,7 @@
 import Image from "next/image";
 import logo from "../../public/images/Kinya-thumb.png"
+import { useRouter } from "next/router";
+import { useState } from "react";
 
 export async function getServerSideProps() {
     const title = "Amasomo mfata"
@@ -12,9 +14,11 @@ export async function getServerSideProps() {
     return { props: { right, title } }
   }
 export default function Courses(){
+    const router = useRouter()
+    const [lastNote, setLastNote] = useState("/1")
     return (
         <div className="flex flex-col h-full w-full md:w-1/3 gap-2">
-            <div className="h-1/2 border border-gray-300">
+            <div onClick={() => router.push(`/courses/${lastNote}`)} className="cursor-pointer hover:shadow hover:shadow-sky-200 h-1/2 border border-gray-300">
                 <div className="pb-2 h-1/2">
                     <div className="h-full relative w-full">
                         <Image
