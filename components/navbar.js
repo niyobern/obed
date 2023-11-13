@@ -24,7 +24,7 @@ export default function NavBar({title}){
             </div>
             <div className="flex gap-4">
               <div className="border-2 border-sky-500 py-1 px-2 rounded-sm">Ikinyarwanda</div>
-              <Link href="/logout" className="border-2 border-sky-500 py-1 px-2 rounded-sm flex gap-1">
+              <Link href="/logout" className="border-2 border-sky-500 py-1 px-2 rounded-sm items-center flex gap-1">
                 <span>Gusohoka</span>
                 <FiLogOut color="white"/>
               </Link>
