@@ -1,14 +1,20 @@
 import Image from "next/image";
 import logo from "../../public/images/Kinya-thumb.png"
 import { useRouter } from "next/router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 export default function Courses(){
     const router = useRouter()
     const [lastNote, setLastNote] = useState("/0/0")
+    useEffect(() => {
+        const token = localStorage.getItem("token")
+        axios.get("https://nvb_backend-1-z3745144.deta.app/users/details", { headers: {"Authorization": token}})
+        .then((res) => setLastNote(res.data.details.last_note))
+    })
     return (
         <div className="flex flex-col h-full w-full md:w-1/3 gap-2">
-            <div onClick={() => router.push(`/courses/${lastNote}`)} className="cursor-pointer hover:shadow hover:shadow-sky-200 h-1/2 border border-gray-300">
+            <div onClick={() => router.push(`/courses${lastNote}`)} className="cursor-pointer hover:shadow hover:shadow-sky-200 h-1/2 border border-gray-300">
                 <div className="pb-2 h-1/2">
                     <div className="h-full relative w-full">
                         <Image
