@@ -8,12 +8,12 @@ export default function LeftSide(){
     const router = useRouter()
     const [details, setDetails] = useState(null)
     const pathName = router.pathname
-    useEffect(() => {
-        const token = localStorage.getItem("token")
-        axios.get("https://nvb_backend-1-z3745144.deta.app/users/details", { headers: { "Authorization": token}})
-        .then((res) => setDetails(res.data))
-        .catch(() => router.replace("/login"))
-    })
+    // useEffect(() => {
+    //     const token = localStorage.getItem("token")
+    //     axios.get("https://nvb_backend-1-z3745144.deta.app/users/details", { headers: { "Authorization": token}})
+    //     .then((res) => setDetails(res.data))
+    //     .catch(() => router.replace("/login"))
+    // })
     if (!details){
         return (
             <div></div>

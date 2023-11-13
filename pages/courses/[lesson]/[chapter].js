@@ -53,7 +53,7 @@ export default function Study( { notes, slug, title }){
         const progress = slug + "/" + String(notes.length)
         axios.post("https://nvb_backend-1-z3745144.deta.app/study/note", {"progress": progress}, { headers: { "Authorization": token}})
         .then((res) => console.log(res.data))
-        .catch((err) => router.replace("/home"))
+        .catch((err) => console.log(err))
     })
     return (
         <div className="flex flex-col w-full">
