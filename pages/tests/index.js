@@ -14,7 +14,7 @@ export default function Tests(){
         axios.get("https://nvb_backend-1-z3745144.deta.app/study/test", { headers : { "Authorization": token}})
         .then((res) => setAttempted(res.data))
         .catch( () => router.replace("/login"))
-    })
+    }, [router])
     const tests = Array.from(Array(20).keys())
     if (modal >= 0){
         return (

@@ -17,7 +17,7 @@ export default function Users(){
         axios.get("https://nvb_backend-1-z3745144.deta.app/subscription/package")
         .then((res) => setPlans(res.data))
     
-    }, [])
+    }, [router])
     return (
         <div className="flex flex-col md:grid grid-cols-2 gap-4">
             {users.map( (item, index) => (

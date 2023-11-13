@@ -1,12 +1,24 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { AiOutlineMenu } from 'react-icons/ai';
 import Content from './content';
 import axios from 'axios';
+import { useRouter } from 'next/router';
 
-export default function Right({ contents, tests, cards, selected }){
+export default function Right({ contents, selected }){
   const [newContents, setNewContents] = useState(contents || [])
   const [checked, setChecked] = useState(selected || [])
+  const router = useRouter()
+  const [tests, setTests] = useState(0)
+  const [cards, setCards] = useState(0)
 
+  useEffect(() => {
+    const token = localStorage.getItem("token")
+    axios.get("https://nvb_backend-1-z3745144.deta.app/users/details", { headers: {"Authorization": token}})
+    .then((res) => {
+      setTests(res.data.study.test)
+      setCards(res.data.study.cards)
+    })
+  })
   function handleFocus(index){
     const contentsCopy = [...newContents]
     contentsCopy[index].focused = !contentsCopy[index]?.focused
@@ -23,7 +35,7 @@ export default function Right({ contents, tests, cards, selected }){
     axios.post('https://nvb_backend-1-z3745144.deta.app/study/check', {checked: checkedCopy}, {headers: {"Authorization": token}})
     .then((res) => console.log(res.data))
   }
-  if (tests){
+  if (router.pathname === "/"){
     return  (
         <div className="flex flex-col p-8 gap-8">
             <div className="bg-sky-400 flex flex-col rounded w-3/4 items-center justify-evenly text-white py-4 gap-4">

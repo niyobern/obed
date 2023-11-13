@@ -35,15 +35,16 @@ export const getStaticProps = (async (context) => {
     const lessons = JSON.parse(rawLessons)
     const notes = allNotes[lesson][chapter]
     const contents = []
+    const chapterTitle = chapters[lesson][chapter]
     lessons.forEach(less => {
         const chap_contents = chapters[less.key].map(cont => cont.item)
         contents.push({lesson: less.title, contents: chap_contents})
     })
     const sideLinks = {contents: contents}
-    return { props: { notes: notes, slug: `${lesson}/${chapter}`, right: sideLinks } }
+    return { props: { notes: notes, slug: `${lesson}/${chapter}`, right: sideLinks, title: chapterTitle } }
 })
 
-export default function Study( { notes, slug }){
+export default function Study( { notes, slug, title }){
     const [focused, setFocused] = useState(0)
     const [index, setIndex] = useState(0)
     const router = useRouter()
@@ -62,7 +63,7 @@ export default function Study( { notes, slug }){
                 <span onClick={() => setFocused(2)} className={`pb-4 w-full border-b-2 cursor-pointer ${focused === 2 ? "border-black": "border-gray-300"}`}>Imyitozo</span>
             </div>
             <div className="py-8 px-4">
-                {focused === 0 && <Incamake/>}
+                {focused === 0 && <Incamake id={slug} title={title}/>}
                 {focused === 1 && <Card note={notes[index]} length={notes.length} number={index} nav={(num) => setIndex(num)}/>}
                 {focused === 2 && (
                     <div className="border border-gray-200 border-l-8 border-l-black rounded p-2 w-fit">

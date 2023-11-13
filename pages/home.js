@@ -5,10 +5,6 @@ import Header from "/components/header";
 import Tangira from "/components/tangira";
 import TestGrid from "/components/test/testgrid";
 
-export async function getServerSideProps() {
-    const right = {tests: 33, cards: 0}
-    return { props: { right } }
-  }
 
 export default function Home(){
     const tests = ["011", "009", "017", "016", "001", "0019"]

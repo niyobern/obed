@@ -9,9 +9,9 @@ export default function Ikofi(){
     const [plans, setPlans] = useState([])
     useEffect(() => {
         const token = localStorage.getItem("token")
-        // axios.get("https://nvb_backend-1-z3745144.deta.app/users/details", { "headers": { "Authorization": token}})
-        // .then((res) => setDays(res.data.days_remaining))
-        // .catch((err) => router.replace("/login"))
+        axios.get("https://nvb_backend-1-z3745144.deta.app/users/details", { "headers": { "Authorization": token}})
+        .then((res) => setDays(res.data.days_remaining))
+        .catch((err) => router.replace("/login"))
         axios.get("https://nvb_backend-1-z3745144.deta.app/subscription/package")
         .then((res) => setPlans(res.data))
     
