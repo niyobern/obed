@@ -2,6 +2,7 @@ import { MdCall } from 'react-icons/md';
 import { useState } from "react";
 import Image from "next/image"
 import { AiOutlineMenu } from 'react-icons/ai';
+import axios from 'axios';
 
 export default function VerifyPhone() {
     const [code, setCode] = useState("")

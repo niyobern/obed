@@ -2,6 +2,7 @@ import Image from "next/image"
 import { useState } from "react";
 import { AiOutlineMenu } from 'react-icons/ai';
 import { BiSolidRename } from "react-icons/bi"
+import axios from "axios";
 
 export default function Name(){
     const [name, setName] = useState("")

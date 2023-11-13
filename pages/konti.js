@@ -2,7 +2,7 @@ import { FiEdit } from "react-icons/fi";
 import { FaLock } from "react-icons/fa";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { Router, useRouter } from "next/router";
+import { useRouter } from "next/router";
 
 
 export default function Konti(){

@@ -7,6 +7,7 @@ import { BsFillPersonPlusFill } from 'react-icons/bs';
 import { BiWorld } from 'react-icons/bi';
 import Link from "next/link";
 import { useRouter } from 'next/router';
+import axios from 'axios';
 
 export default function Register( { loggedIn }) {
     const [phone, setPhone] = useState("")
