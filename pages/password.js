@@ -3,9 +3,11 @@ import Image from "next/image"
 import { useState } from "react";
 import { AiOutlineMenu } from 'react-icons/ai';
 import { FaLock } from 'react-icons/fa';
+import { useRouter } from "next/router";
 
 export default function Password(){
     const [password, setPassword] = useState("")
+    const router = useRouter()
 
     function handlePassword(e){
         const text = e.target.value

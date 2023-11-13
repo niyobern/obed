@@ -3,9 +3,11 @@ import { useState } from "react";
 import Image from "next/image"
 import { AiOutlineMenu } from 'react-icons/ai';
 import axios from 'axios';
+import { useRouter } from 'next/router';
 
 export default function VerifyPhone() {
     const [code, setCode] = useState("")
+    const router = useRouter()
     function handleCode(e){
         const text = e.target.value
         const value = text.replace(/\D/g, "")

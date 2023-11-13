@@ -3,9 +3,11 @@ import { useState } from "react";
 import { AiOutlineMenu } from 'react-icons/ai';
 import { BiSolidRename } from "react-icons/bi"
 import axios from "axios";
+import { useRouter } from "next/router";
 
 export default function Name(){
     const [name, setName] = useState("")
+    router = useRouter()
 
     function handleName(e){
         const text = e.target.value
