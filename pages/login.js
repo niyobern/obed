@@ -26,7 +26,10 @@ export default function Login(){
         data.append("username", phone)
         data.append("password", password)
         axios.post("https://nvb_backend-1-z3745144.deta.app/login", data)
-        .then((res) => localStorage.setItem("token", res.data.token))
+        .then((res) => {
+            localStorage.setItem("token", res.data.token)
+            router.replace("/home")
+        })
     }
     return (
         <div className="h-full flex flex-col gap-4 relative">
