@@ -13,6 +13,11 @@ export default function LeftSide(){
         .then((res) => setDetails(res.data))
         .catch(() => router.replace("/login"))
     })
+    if (!details){
+        retuen (
+            <div></div>
+        )
+    }
     return (
         <div className="flex flex-col gap-2 md:gap-8 md:pl-20 py-4">
             <div className="flex flex-row gap-3">
