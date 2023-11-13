@@ -80,7 +80,7 @@ export default function Password(){
                 <div className="w-full md:w-1/3 mx-auto pt-4 md:pt-8">
                     <div className="flex gap-4 border-b-2 border-black rounded pt-6 p-4">
                         <FaLock className="h-5 w-5"/>
-                        <input type="password" required placeholder="Password" onFocus={() => phone === "07xx xxx xxx" && setPhone("")} value={password} onChange={handlePassword}  className="font-medium outline-none"/>
+                        <input type="password" required placeholder="Password" value={password} onChange={handlePassword}  className="font-medium outline-none"/>
                     </div>
                     <div className="flex flex-col pt-8 gap-4">
                         <div onClick={handleSubmit} className="border-2 p-2 border-blue-600 rounded text-blue-600 text-center font-bold font-bold hover:text-white hover:bg-blue-600 cursor-pointer">Emeza ijambobanga</div>

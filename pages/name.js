@@ -7,7 +7,7 @@ import { useRouter } from "next/router";
 
 export default function Name(){
     const [name, setName] = useState("")
-    router = useRouter()
+    const router = useRouter()
 
     function handleName(e){
         const text = e.target.value
