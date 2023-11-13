@@ -14,7 +14,7 @@ export default function LeftSide(){
         .catch(() => router.replace("/login"))
     })
     if (!details){
-        retuen (
+        return (
             <div></div>
         )
     }
