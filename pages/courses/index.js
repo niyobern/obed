@@ -10,7 +10,7 @@ export default function Courses(){
     useEffect(() => {
         const token = localStorage.getItem("token")
         axios.get("https://nvb_backend-1-z3745144.deta.app/users/details", { headers: {"Authorization": token}})
-        .then((res) => setLastNote(res.data.study.last_note))
+        .then((res) => setLastNote(res.data.study["last_note"]))
     })
     return (
         <div className="flex flex-col h-full w-full md:w-1/3 gap-2">

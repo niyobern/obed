@@ -11,14 +11,14 @@ export default function Right({ contents, selected }){
   const [tests, setTests] = useState(0)
   const [cards, setCards] = useState(0)
 
-  // useEffect(() => {
-  //   const token = localStorage.getItem("token")
-  //   axios.get("https://nvb_backend-1-z3745144.deta.app/users/details", { headers: {"Authorization": token}})
-  //   .then((res) => {
-  //     setTests(res.data.study.tests)
-  //     setCards(res.data.study.cards)
-  //   })
-  // })
+  useEffect(() => {
+    const token = localStorage.getItem("token")
+    axios.get("https://nvb_backend-1-z3745144.deta.app/users/details", { headers: {"Authorization": token}})
+    .then((res) => {
+      setTests(res.data.study.tests)
+      setCards(res.data.study.cards)
+    })
+  })
   function handleFocus(index){
     const contentsCopy = [...newContents]
     contentsCopy[index].focused = !contentsCopy[index]?.focused
