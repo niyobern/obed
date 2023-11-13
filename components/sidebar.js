@@ -10,7 +10,7 @@ export default function LeftSide(){
     const pathName = router.pathname
     useEffect(() => {
         const token = localStorage.getItem("token")
-        axios.getItem("https://nvb_backend-1-z3745144.deta.app/users/details", { headers: { "Authorization": token}})
+        axios.get("https://nvb_backend-1-z3745144.deta.app/users/details", { headers: { "Authorization": token}})
         .then((res) => setDetails(res.data))
         .catch(() => router.replace("/login"))
     })
