@@ -1,13 +1,10 @@
-import NavBar from "/components/navbar";
-import Head from "next/head";
-import LeftSide from "/components/sidebar";
 import Header from "/components/header";
 import Tangira from "/components/tangira";
 import TestGrid from "/components/test/testgrid";
 
 
 export default function Home(){
-    const tests = ["011", "009", "017", "016", "001", "0019"]
+    const tests = [1, 2, 3, 4, 5, 6]
     return (
         <>
             <Header/>
