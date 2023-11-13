@@ -51,7 +51,7 @@ export default function Study( { notes, slug, title }){
     useEffect(() => {
         const token = localStorage.getItem("token")
         const progress = slug + "/" + String(notes.length)
-        axios.post(`https://nvb_backend-1-z3745144.deta.app/study/note?proogress=${progress}`, {}, { headers: { "Authorization": token}})
+        axios.post("https://nvb_backend-1-z3745144.deta.app/study/note", {"progress": progress}, { headers: { "Authorization": token}})
         .then((res) => console.log(res.data))
         .catch((err) => router.replace("/home"))
     })

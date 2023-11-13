@@ -15,7 +15,7 @@ export default function Right({ contents, selected }){
     const token = localStorage.getItem("token")
     axios.get("https://nvb_backend-1-z3745144.deta.app/users/details", { headers: {"Authorization": token}})
     .then((res) => {
-      setTests(res.data.study.test)
+      setTests(res.data.study.tests)
       setCards(res.data.study.cards)
     })
   })
