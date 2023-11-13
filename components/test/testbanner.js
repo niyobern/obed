@@ -2,7 +2,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { BsCheck } from "react-icons/bs"
 
-export default function TestBanner({ id, close }){
+export default function TestBanner({ id, close, length }){
     return (
         <div className="bg-white rounded w-full md:w-11/12 h-5/6 lg:w-2/3">
             <div className="flex flex-col py-4">
@@ -21,8 +21,8 @@ export default function TestBanner({ id, close }){
                           />
                         </div>
                         <div className="flex flex-col gap-4 col-span-8">
-                            <p className="font-medium">Isuzuma #K003: riteguye nk&apos;ikizamini cy&apos;uruhushya rw&apos;agateganyo rwa Polisi.</p>
-                            <p className="text-sm">Iri suzumabumenyi rifite ibibazo 20 bibajijwe nk&apos;uko Polisi y&apos;u Rwanda ibaza mu kizamini cy&apos;uruhushya rw&apos;agateganyo.</p>
+                            <p className="font-medium">Isuzuma #K0{id}: riteguye nk&apos;ikizamini cy&apos;uruhushya rw&apos;agateganyo rwa Polisi.</p>
+                            <p className="text-sm">Iri suzumabumenyi rifite ibibazo {length} bibajijwe nk&apos;uko Polisi y&apos;u Rwanda ibaza mu kizamini cy&apos;uruhushya rw&apos;agateganyo.</p>
                         </div>
                     </div>
                     <div className="bg-blue-700 w-full px-2 lg:px-4 py-2 lg:py-3 text-white flex justify-between rounded">
@@ -37,7 +37,7 @@ export default function TestBanner({ id, close }){
                         <div className="flex flex-col px-4 gap-2">
                             <div className="flex gap-3 items-center">
                                 <BsCheck size={24} className="font-bold text-green-900"/>
-                                <span className="text-sm text-gray-800"> Ibibazo birimo: 20</span>
+                                <span className="text-sm text-gray-800"> Ibibazo birimo: {length}</span>
                             </div>
                             <div className="flex gap-3 items-center">
                                 <BsCheck size={24} className="font-bold text-green-900"/>

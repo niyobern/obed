@@ -1,9 +1,11 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Card from "/components/card";
 import Incamake from "/components/incamake";
 import { BsCheckCircleFill } from "react-icons/bs"
 import { readFile } from 'fs/promises';
+import { useRouter } from "next/router";
 import path from "path";
+import axios from "axios";
 
 export const getStaticPaths = (async () => {
     const links = []
@@ -44,6 +46,14 @@ export const getStaticProps = (async (context) => {
 export default function Study( { notes, slug }){
     const [focused, setFocused] = useState(0)
     const [index, setIndex] = useState(0)
+    const router = useRouter()
+    useEffect(() => {
+        const token = localStorage.getItem("token")
+        const progress = slug + "/" + String(notes.length)
+        axios.post(`https://nvb_backend-1-z3745144.deta.app/study/note?proogress=${progress}`, {}, { headers: { "Authorization": token}})
+        .then((res) => console.log(res.data))
+        .catch((err) => router.replace("/home"))
+    })
     return (
         <div className="flex flex-col w-full">
             <div className="flex justify-evenly text-center items-center font-medium">

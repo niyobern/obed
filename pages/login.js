@@ -5,10 +5,12 @@ import { MdCall } from 'react-icons/md';
 import { FaLock } from 'react-icons/fa';
 import Link from "next/link";
 import axios from "axios";
+import { useRouter } from "next/router";
 
 export default function Login(){
     const [phone, setPhone] = useState("")
     const [password, setPassword] = useState("")
+    const router = useRouter()
     function handlePhone(e){
         const text = e.target.value
         const value = text.replace(/\D/g, "")
@@ -30,7 +32,7 @@ export default function Login(){
         <div className="h-full flex flex-col gap-4 relative">
             <div className="bg-indigo-950 w-full flex flex-col justify-between fixed z-50">
                 <div className="flex justify-between w-full px-2 md:w-2/3 mx-auto py-4 items-center">
-                    <div className="flex gap-2">
+                    <div onClick={() => router.push("/")} className="flex gap-2">
                         <Image
                         src="/images/logo.png"
                         alt="Logo"
@@ -42,8 +44,8 @@ export default function Login(){
                         <h1 className="text-white text-center self-center text-xl font-bold">JIPROVISIONAL</h1>
                     </div>
                     <div className="hidden md:flex gap-4 text-white items-center">
-                        <div className="border-2 border-sky-500 py-1 px-2 rounded-sm">{"Iyandikishe"}</div>
-                        <div className="border-2 border-sky-500 py-1 px-2 rounded-sm">{"Injira"}</div>
+                        <Link href="/register" className="cursor-pointer border-2 border-sky-500 py-1 px-2 rounded-sm">Iyandikishe</Link>
+                        <Link href="/login" className="cursor-pointer border-2 border-sky-500 py-1 px-2 rounded-sm">Injira</Link>
                         <div className="border-2 border-sky-500 py-1 px-2 rounded-sm">Ikinyarwanda</div>
                     </div>
                     <AiOutlineMenu color="white" className="h-6 w-6 flex md:hidden"/>

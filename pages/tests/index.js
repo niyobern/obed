@@ -1,7 +1,6 @@
 import TestGrid from "/components/test/testgrid";
 import TestBanner from "/components/test/testbanner";
 import { useState } from "react";
-import { useRouter } from "next/router";
 
 export default function Tests(){
     const [focused, setFocused] = useState(0)
@@ -10,7 +9,7 @@ export default function Tests(){
     if (modal >= 0){
         return (
             <div className="z-50 fixed top-0 left-0 bg-gray-900 bg-opacity-50 w-screen h-screen flex items-center justify-center">
-                <TestBanner close={() => setModal(0)} id={modal}/>
+                <TestBanner close={() => setModal(0)} id={modal} length={20}/>
             </div>
         )
     } else {

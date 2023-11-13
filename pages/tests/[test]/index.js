@@ -38,24 +38,42 @@ export default function Test({ questions, slug }){
     const [answers, setAnswers] = useState([])
     const [index, setIndex] = useState(0)
     const router = useRouter()
-    const [lastDay, setLastDay] = useState("2023-03-14")
-    const [lastTime, setLastTime] = useState("12:34:53")
-    const [length, setLength] = useState(20)
-    const [lastScore, setLastScore] = useState(2)
+    const [lastDay, setLastDay] = useState(null)
+    const [lastTime, setLastTime] = useState(null)
+    const [lastScore, setLastScore] = useState(null)
+    const [score, setScore] = useState()
 
+    useEffect(() => {
+        const token = localStorage.getItem("token")
+        axios.get(`https://nvb_backend-1-z3745144.deta.app/study/test/${slug}`, { headers: { "Authorization": token}})
+        .then((res) => {
+            setLastDay(res.data.lastDay)
+            setLastTime(res.data.lastTime)
+            setLastScore(res.data.score)
+        })
+    })
     function handleAnswer(number){
-        const item = {...questions[number], "index": -1}
+        const item = {...questions[index], "index": -1, "choice": number}
         const answersCopy = [...answers]
         const cleanAnswers = answersCopy.filter( (value) => {
             return value.index !== index
         })
         item["index"] = index
+        if (item.answer >= item.answers.length){
+            item.choice = item.answers.length
+        }
         if (index < 19){
             setIndex(index +1)
         } else {
-            axios.post("/api/test", {"test_id": slug, "answers": cleanAnswers.concat([item])})
-            .then( (response) => console.log(response.data))
-            router.replace("/home")
+            axios.post("https://nvb_backend-1-z3745144.deta.app/study/test", {"test_id": slug, "length": questions.length, "answers": cleanAnswers.concat([item])})
+            .then( (response) => {
+                localStorage.setItem(`test_${slug}`, JSON.stringify(response.data))
+                localStorage.setItem(`testScore_${slug}`, JSON.stringify(score))
+                router.replace(`/tests/${slug}/review`)
+            })
+        }
+        if (item.answer === item.choice){
+            setScore(score + 1)
         }
         setAnswers(cleanAnswers.concat([item]))
     }
@@ -67,17 +85,20 @@ export default function Test({ questions, slug }){
                   question={questions[index]} 
                   answer={handleAnswer} back={() => setIndex(index-1)} 
                   index={index} total={questions.length}
-                  latestScore={lastScore}
-                  lastDay={lastDay}
-                  lastTime={lastTime}
-                  length={length}
                 />
             </div>
         )
     }
     return (
         <div>
-            <TestIntro start={() => setModal(true)}/>
+            <TestIntro
+              id={slug}
+              start={() => setModal(true)}
+              latestScore={lastScore}
+              lastDay={lastDay}
+              lastTime={lastTime}
+              length={questions.length}
+            />
         </div>
     )
 }

@@ -16,11 +16,11 @@ export default function TestIntro({ id, start, latestScore, lastDay, lastTime, l
                         </div>
                         <div className="flex flex-col gap-4 col-span-8">
                             <p className="font-medium">Isuzuma #K0{id}: riteguye nk&apos;ikizamini cy&apos;uruhushya rw&apos;agateganyo rwa Polisi.</p>
-                            <p className="text-sm">Iri suzumabumenyi rifite ibibazo 20 bibajijwe nk&apos;uko Polisi y&apos;u Rwanda ibaza mu kizamini cy&apos;uruhushya rw&apos;agateganyo.</p>
+                            <p className="text-sm">Iri suzumabumenyi rifite ibibazo {length} bibajijwe nk&apos;uko Polisi y&apos;u Rwanda ibaza mu kizamini cy&apos;uruhushya rw&apos;agateganyo.</p>
                         </div>
                     </div>
                     <div className="bg-blue-700 w-full px-2 lg:px-4 py-2 lg:py-3 text-white flex justify-between items-center rounded">
-                        <span className="text-sm font-medium">Latest score: {latestScore}/20</span>
+                        <span className="text-sm font-medium">Latest score: {latestScore}/{length}</span>
                         <div onClick={start} className="cursor-pointer px-1 border-2 border-white rounded hover:bg-white hover:text-green-800">Tangira</div>
                         <div className="flex flex-col items-end">
                             <span className="text-xs font-medium">Igihe wakoreye: {lastDay}</span>

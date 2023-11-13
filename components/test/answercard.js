@@ -2,7 +2,7 @@ import Image from "next/image"
 import { useState } from "react"
 import { AiFillCheckCircle, AiFillCloseCircle } from "react-icons/ai"
 
-export default function AnswerCard({ question, answer, back, index, total, slug }){
+export default function AnswerCard({ question, slug }){
     const [choice, setChoice] = useState(-1)
     return (
         <div className="bg-white rounded w-full h-fit flex flex-col">
@@ -35,15 +35,17 @@ export default function AnswerCard({ question, answer, back, index, total, slug 
                         <span>{item}</span>
                     </div>
                     )}
-                    {/* {(question.answers[0].slice(-3) !== "png" || question.answers[0].slice(-3) !== "gpg") && <div className="flex justify-center hover:bg-blue-200 border-x border-gray-200 p-2 py-1 border-b-2 border-b-blue-600" onClick={() => setChoice(choice === 0 ? -1 : 0)}>
-                      <Image
-                        alt="Question Image"
-                        src="/images/Kinya-thumb.png"
-                        width={500}
-                        height={500}
-                        className="h-48 w-fit"
-                      />
-                    </div> } */}
+                    {(question.answers[0].slice(-3) === "png" || question.answers[0].slice(-3) === "gpg") && question.answers.map((item, index) => 
+                    <div key={index} className="flex justify-center hover:bg-blue-200 border-x border-gray-200 p-2 py-1 border-b-2 border-b-blue-600" onClick={() => setChoice(choice === 0 ? -1 : index + 1)}>
+                        <Image
+                            alt="Question Image"
+                            src={`/images/tests/${slug}/${Number(item.slice(0,-3) - 1)}.${item.slice(-3)}`}
+                            width={500}
+                            height={500}
+                            className="h-48 w-fit"
+                        />
+                    </div>
+                    )}
                 </div>
             </div>
         </div>

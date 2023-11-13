@@ -26,21 +26,23 @@ export default function TestCard({ question, answer, back, index, total, slug })
                 </div>
                 <div className="flex flex-col">
                     {(question.answers[0].slice(-3) !== "png" && question.answers[0].slice(-3) !== "gpg") && question.answers.map((item, index) => 
-                    <div key={index} onClick={() => setChoice(choice === index ? -1 : index)} className="cursor-pointer flex items-center gap-4 border-x border-gray-200 p-2 py-3 border-b-2 border-b-blue-600">
+                    <div key={index} onClick={() => setChoice(choice === index ? -1 : index + 1)} className="cursor-pointer flex items-center gap-4 border-x border-gray-200 p-2 py-3 border-b-2 border-b-blue-600">
                         {choice !== index && <IoMdRadioButtonOff/>}
                         {choice === index && <IoMdRadioButtonOn color="blue"/>}
                         <span>{item}</span>
                     </div>
                     )}
-                    {(question.answers[0].slice(-3) === "png" || question.answers[0].slice(-3) === "gpg") && <div className="flex justify-center hover:bg-blue-200 border-x border-gray-200 p-2 py-1 border-b-2 border-b-blue-600" onClick={() => setChoice(choice === 0 ? -1 : 0)}>
-                      <Image
-                        alt="Question Image"
-                        src="/images/Kinya-thumb.png"
-                        width={500}
-                        height={500}
-                        className="h-48 w-fit"
-                      />
-                    </div> }
+                    {(question.answers[0].slice(-3) === "png" || question.answers[0].slice(-3) === "gpg") && question.answers.map((item, index) => 
+                    <div key={index} className="flex justify-center hover:bg-blue-200 border-x border-gray-200 p-2 py-1 border-b-2 border-b-blue-600" onClick={() => setChoice(choice === 0 ? -1 : index + 1)}>
+                        <Image
+                            alt="Question Image"
+                            src={`/images/tests/${slug}/${item}`}
+                            width={500}
+                            height={500}
+                            className="h-48 w-fit"
+                        />
+                    </div>
+                    )}
                 </div>
                 <div className="flex justify-between py-4">
                     <div onClick={() => index > 0 && back()} className="text-center text-white rounded p-1 font-medium bg-blue-600 w-3/12 cursor-pointer">Inyuma</div>

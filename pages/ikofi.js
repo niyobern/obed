@@ -9,9 +9,9 @@ export default function Ikofi(){
     const [plans, setPlans] = useState([])
     useEffect(() => {
         const token = localStorage.getItem("token")
-        axios.get("https://nvb_backend-1-z3745144.deta.app/users/details", { "headers": { "Authorization": token}})
-        .then((res) => setDays(res.data.days_remaining))
-        .catch((err) => router.replace("/login"))
+        // axios.get("https://nvb_backend-1-z3745144.deta.app/users/details", { "headers": { "Authorization": token}})
+        // .then((res) => setDays(res.data.days_remaining))
+        // .catch((err) => router.replace("/login"))
         axios.get("https://nvb_backend-1-z3745144.deta.app/subscription/package")
         .then((res) => setPlans(res.data))
     
@@ -26,7 +26,7 @@ export default function Ikofi(){
                 </div>
                 <span className="font-medium text-sm">Gura ifatabuguzi</span>
             </div>
-            <div className="flex flex-col md:flex-row gap-8">
+            <div className="flex flex-col md:grid grid-cols-2 gap-8">
                 {plans.map( (item, index) => <Plan plan={item} key={index}/>)}
             </div>
         </div>
