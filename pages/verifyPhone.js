@@ -9,7 +9,7 @@ export default function VerifyPhone() {
     function handleCode(e){
         const text = e.target.value
         const value = text.replace(/\D/g, "")
-        setPhone(value)
+        setCode(value)
     }
     function handleSubmit(e){
         e.preventDefault()
