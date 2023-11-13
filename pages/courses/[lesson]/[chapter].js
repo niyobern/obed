@@ -35,7 +35,7 @@ export const getStaticProps = (async (context) => {
     const lessons = JSON.parse(rawLessons)
     const notes = allNotes[lesson][chapter]
     const contents = []
-    const chapterTitle = chapters[lesson][Number(chapter)]
+    const chapterTitle = chapters[lesson][Number(chapter)].item
     lessons.forEach(less => {
         const chap_contents = chapters[less.key].map(cont => cont.item)
         contents.push({lesson: less.title, contents: chap_contents})
