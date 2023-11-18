@@ -18,6 +18,8 @@ export default function Right({ contents, selected }){
       setTests(res.data.study.tests)
       setCards(res.data.study.cards)
     })
+    axios.get("https://nvb_backend-1-z3745144.deta.app/study/check", { headers: {"Authorization": token}})
+    .then((res) => setChecked(res.data))
   })
   function handleFocus(index){
     const contentsCopy = [...newContents]
