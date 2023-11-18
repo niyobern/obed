@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { AiOutlineMenu } from 'react-icons/ai';
-import Content from './content';
+import Content from '../content';
 import axios from 'axios';
 import { useRouter } from 'next/router';
 

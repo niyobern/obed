@@ -3,6 +3,9 @@ import { useState } from "react"
 import { IoMdRadioButtonOff, IoMdRadioButtonOn } from "react-icons/io"
 
 export default function TestCard({ question, answer, back, index, total, slug }){
+    if (question === undefined){
+        return <div></div>
+    }
     const [choice, setChoice] = useState(-1)
     return (
         <div className="bg-white rounded w-full md:w-11/12 h-5/6 lg:w-2/3 flex flex-col overflow-auto">
@@ -21,25 +24,29 @@ export default function TestCard({ question, answer, back, index, total, slug })
                         height={500}
                         className="h-48 w-fit"
                         loader={(src) => src.src}
+                        priority={true}
+                        unoptimized
                       />
                     </div>}
                 </div>
                 <div className="flex flex-col">
                     {(question.answers[0].slice(-3) !== "png" && question.answers[0].slice(-3) !== "gpg") && question.answers.map((item, index) => 
-                    <div key={index} onClick={() => setChoice(choice === index ? -1 : index + 1)} className="cursor-pointer flex items-center gap-4 border-x border-gray-200 p-2 py-3 border-b-2 border-b-blue-600">
-                        {choice !== index && <IoMdRadioButtonOff/>}
-                        {choice === index && <IoMdRadioButtonOn color="blue"/>}
+                    <div key={index} onClick={() => setChoice(choice === index + 1 ? -1 : index + 1)} className="cursor-pointer flex items-center gap-4 border-x border-gray-200 p-2 py-3 border-b-2 border-b-blue-600">
+                        {choice !== index + 1 && <IoMdRadioButtonOff/>}
+                        {choice === index + 1 && <IoMdRadioButtonOn color="blue"/>}
                         <span>{item}</span>
                     </div>
                     )}
                     {(question.answers[0].slice(-3) === "png" || question.answers[0].slice(-3) === "gpg") && question.answers.map((item, index) => 
-                    <div key={index} className="flex justify-center hover:bg-blue-200 border-x border-gray-200 p-2 py-1 border-b-2 border-b-blue-600" onClick={() => setChoice(choice === 0 ? -1 : index + 1)}>
+                    <div key={index} className={`${index+ 1 === choice ? "bg-blue-400": "bg-transparent"} flex justify-center hover:bg-blue-200 border-x border-gray-200 p-2 py-1 border-b-2 border-b-blue-600`} onClick={() => setChoice(choice === index + 1 ? -1 : index + 1)}>
                         <Image
                             alt="Question Image"
                             src={`/images/tests/${slug}/${item}`}
                             width={500}
                             height={500}
                             className="h-48 w-fit"
+                            loader={(src) => src.src}
+                            priority={true}
                         />
                     </div>
                     )}

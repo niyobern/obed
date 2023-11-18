@@ -12,7 +12,11 @@ export default function LeftSide(){
         const token = localStorage.getItem("token")
         axios.get("https://nvb_backend-1-z3745144.deta.app/users/details", { headers: { "Authorization": token}})
         .then((res) => setDetails(res.data))
-        .catch(() => router.replace("/login"))
+        .catch((err) => {
+            if (err.response.status == 401){
+                router.replace("/login")
+            }
+        })
     })
     if (!details){
         return (
@@ -20,7 +24,7 @@ export default function LeftSide(){
         )
     }
     return (
-        <div className="flex flex-col gap-2 md:gap-8 md:pl-20 py-4">
+        <div className="flex flex-col gap-2 md:gap-8 pl-4 lg:pl-20 py-4">
             <div className="flex flex-row gap-3">
                 <div className="flex items-center gap-4">
                     <Image
@@ -28,12 +32,12 @@ export default function LeftSide(){
                     alt="Profile"
                     width={50}
                     height={50}
-                    className="w-12 h-12 lg:w-14 lg:h-14 rounded-full"
+                    className="w-10 h-10 lg:w-14 lg:h-14 rounded-full"
                     />
                 </div>
                 <div className="flex flex-col">
-                    <span className="font-black text-lg">{details.details.name}</span>
-                    <span className="text-sm">@+{details.details.phone}</span>
+                    <span className="font-medium text-sm md:text-normal lg:font-black lg:text-lg">{details.details.name}</span>
+                    <span className="text-xs md:text-sm">@+{details.details.phone}</span>
                 </div>
             </div>
             <div className="flex flex-row gap-3">

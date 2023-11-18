@@ -41,7 +41,7 @@ export default function Test({ questions, slug }){
     const [lastDay, setLastDay] = useState(null)
     const [lastTime, setLastTime] = useState(null)
     const [lastScore, setLastScore] = useState(null)
-    const [score, setScore] = useState()
+    const [score, setScore] = useState(0)
 
     useEffect(() => {
         const token = localStorage.getItem("token")
@@ -50,7 +50,7 @@ export default function Test({ questions, slug }){
             setLastDay(res.data.lastDay)
             setLastTime(res.data.lastTime)
             setLastScore(res.data.score)
-        })
+        }).catch((err) => console.log(err, "no test found"))
     })
     function handleAnswer(number){
         const item = {...questions[index], "index": -1, "choice": number}
@@ -65,10 +65,9 @@ export default function Test({ questions, slug }){
         if (index < 19){
             setIndex(index +1)
         } else {
-            axios.post("https://nvb_backend-1-z3745144.deta.app/study/test", {"test_id": slug, "length": questions.length, "answers": cleanAnswers.concat([item])})
+            const token = localStorage.getItem("token")
+            axios.post("https://nvb_backend-1-z3745144.deta.app/study/test", {"test_id": slug, "length": questions.length, "answers": cleanAnswers.concat([item])}, { headers: { "Authorization": token}})
             .then( (response) => {
-                localStorage.setItem(`test_${slug}`, JSON.stringify(response.data))
-                localStorage.setItem(`testScore_${slug}`, JSON.stringify(score))
                 router.replace(`/tests/${slug}/review`)
             })
         }

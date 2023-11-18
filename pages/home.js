@@ -10,7 +10,7 @@ export default function Home(){
             <Header/>
             <Tangira/>
             <span className="pl-2 font-medium border-l-4 border-blue-500">Amasuzuma akunzwe</span>
-            <div className="flex flex-col md:grid grid-cols-2 gap-2">
+            <div className="flex flex-col mx-auto max-w-sm lg:max-w-xl lg:grid grid-cols-2 gap-2">
             {tests.map((item, index) => <TestGrid key={index} number={item}/>)}
             </div>
         </>

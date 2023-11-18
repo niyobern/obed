@@ -10,6 +10,7 @@ export default function TestGrid( { number, choose } ){
                       alt="Thumbnail"
                       fill
                       className="h-fit w-full"
+                      sizes="400"
                     />
                 </div>
                 <div className="flex flex-col p-2 col-span-4 gap-2">

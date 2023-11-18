@@ -12,6 +12,7 @@ export default function TestIntro({ id, start, latestScore, lastDay, lastTime, l
                             alt="Thumbnail"
                             src="/images/Kinya-thumb.png"
                             fill
+                            sizes="500"
                           />
                         </div>
                         <div className="flex flex-col gap-4 col-span-8">

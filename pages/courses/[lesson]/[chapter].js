@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Card from "/components/card";
 import Incamake from "/components/incamake";
-import { BsCheckCircleFill } from "react-icons/bs"
+import { BsCheckCircleFill } from "react-icons/bs";
 import { readFile } from 'fs/promises';
 import { useRouter } from "next/router";
 import path from "path";
@@ -63,7 +63,7 @@ export default function Study( { notes, slug, title }){
                 <span onClick={() => setFocused(2)} className={`pb-4 w-full border-b-2 cursor-pointer ${focused === 2 ? "border-black": "border-gray-300"}`}>Imyitozo</span>
             </div>
             <div className="py-8 px-4">
-                {focused === 0 && <Incamake id={slug} title={title}/>}
+                {focused === 0 && <Incamake id={slug.split("/")[1]} title={title}/>}
                 {focused === 1 && <Card note={notes[index]} length={notes.length} number={index} nav={(num) => setIndex(num)}/>}
                 {focused === 2 && (
                     <div className="border border-gray-200 border-l-8 border-l-black rounded p-2 w-fit">

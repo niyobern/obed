@@ -4,14 +4,14 @@ import Link from "next/link";
 export default function Header(){
     return (
         <div className="flex flex-col gap-4 relative">
-            <div className="w-full h-40 relative">
+            <div className="w-full h-24 sm:h-32 md:h-40 relative">
                 <Image
                     src="/images/header-slide.png"
                     alt="Header slide"
                     fill
                 />
             </div>
-            <div className="grid grid-cols-2 md:flex bg-gray-100">
+            <div className="grid grid-cols-2 lg:flex bg-gray-100">
                 <Link href="/courses" className="flex flex-col items-center text-center w-full md:w-full hover:bg-gray-200 py-4 cursor-pointer">
                     <Image
                         src="/images/resume.svg"

@@ -19,7 +19,7 @@ export default function Tests(){
     if (modal >= 0){
         return (
             <div className="z-50 fixed top-0 left-0 bg-gray-900 bg-opacity-50 w-screen h-screen flex items-center justify-center">
-                <TestBanner close={() => setModal(0)} id={modal} length={20}/>
+                <TestBanner close={() => setModal(-1)} id={modal} length={20}/>
             </div>
         )
     } else {
@@ -30,12 +30,12 @@ export default function Tests(){
                 <span onClick={() => setFocused(1)} className={`pb-4 w-full border-b-2 cursor-pointer ${focused === 1 ? "border-black": "border-gray-300"}`}>Ayo nakoze</span>
             </div>
             {focused === 0 && (
-            <div className="py-8 px-4 grid grid-cols-2 gap-2">
+            <div className="flex flex-col mx-auto max-w-sm lg:max-w-xl lg:grid grid-cols-2 gap-2">
                 {tests.map( (item, index) => <TestGrid number={item} key={index} choose={(num) => setModal(num)}/>)}
             </div>
             )}
             {focused === 1 && (
-            <div className="py-8 px-4 grid grid-cols-2 gap-2">
+            <div className="flex flex-col mx-auto max-w-sm lg:max-w-xl lg:grid grid-cols-2 gap-2">
                 {attempted.map( (item, index) => <TestGrid number={item} key={index} choose={(num) => setModal(num)}/>)}
             </div>
             )}

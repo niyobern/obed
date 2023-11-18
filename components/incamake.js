@@ -19,12 +19,12 @@ export default function Incamake({ id, title }){
                                 <span>igice</span>
                                 <span className="text-4xl font-bold">#{id}</span>
                             </div>
-                            <div>Ibyapa bibuza cyangwa ibitegeka</div>
+                            <div>{title}</div>
                         </div>
                     </div>
                     <div className="pt-6 pb-2 w-full flex justify-center">
                         <Image
-                          src="/images/logo.jpg"
+                          src="/images/logo.png"
                           alt="Logo"
                           width={30}
                           height={30}
