@@ -38,7 +38,7 @@ export default function Hero({ loggedIn }){
                             <div className="flex flex-col gap-2">
                                 <Link href="/login" className="font-medium text-blue-950 border-b-2 p-2 pr-12 border-blue-950">Injira</Link>
                                 <Link href="/register" className="font-medium text-blue-950 border-b-2 p-2 pr-12 border-blue-950">Iyandikishe</Link>
-                                <Link href="/login" className="font-medium text-blue-950 border-b-2 p-2 pr-12 border-blue-950">Ikinyarwanda</Link>
+                                <Link href="/" className="font-medium text-blue-950 border-b-2 p-2 pr-12 border-blue-950">Ikinyarwanda</Link>
                             </div>
                         </div>
                     </div>
