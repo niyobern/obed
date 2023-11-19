@@ -18,7 +18,7 @@ export default function Courses(){
         <div className="flex flex-col h-full w-full md:w-1/3 gap-2">
             <div onClick={() => router.push(`/courses/${lastNote}`)} className="cursor-pointer hover:shadow hover:shadow-sky-200 h-1/2 border border-gray-300">
                 <div className="pb-2 h-1/2">
-                    <div className="h-full relative w-full">
+                    <div className="h-48 md:h-full relative w-full">
                         <Image
                         src={logo}
                         alt="Thumbnail"
@@ -26,7 +26,7 @@ export default function Courses(){
                         />
                     </div>
                 </div>
-                <span className="text-sm font-medium px-2">Isomo RYUZUYE ryo kwitegura ikizamini cy&apos;uruhushya rw&apos;agateganyo</span>
+                <div className="text-sm font-medium px-2">Isomo RYUZUYE ryo kwitegura ikizamini cy&apos;uruhushya rw&apos;agateganyo</div>
                 <div className="px-2 pt-2">
                     <div className="flex gap-2 py-2">
                         <div className="border border-gray-300 w-full h-3 rounded">

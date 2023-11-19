@@ -22,7 +22,7 @@ export default function Incamake({ id, title }){
                             <div>{title}</div>
                         </div>
                     </div>
-                    <div className="pt-6 pb-2 w-full flex justify-center">
+                    <div className="pt-6 pb-2 w-full h-fit flex justify-center">
                         <Image
                           src="/images/logo.png"
                           alt="Logo"

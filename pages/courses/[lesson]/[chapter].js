@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Card from "/components/card";
+import Right from "@/components/layout/sideRight";
 import Incamake from "/components/incamake";
 import { BsCheckCircleFill } from "react-icons/bs";
 import { readFile } from 'fs/promises';
@@ -44,7 +45,7 @@ export const getStaticProps = (async (context) => {
     return { props: { notes: notes, slug: `${lesson}/${chapter}`, right: sideLinks, title: chapterTitle } }
 })
 
-export default function Study( { notes, slug, title }){
+export default function Study( { notes, slug, title, right }){
     const [focused, setFocused] = useState(0)
     const [index, setIndex] = useState(0)
     const router = useRouter()
@@ -57,12 +58,13 @@ export default function Study( { notes, slug, title }){
     })
     return (
         <div className="flex flex-col w-full">
-            <div className="flex justify-evenly text-center items-center font-medium">
+            {/* <Right contents={right.contents}/> */}
+            <div className="flex justify-evenly text-center text-sm md:text-base items-center font-normal md:font-medium">
                 <span onClick={() => setFocused(0)} className={`pb-4 w-full border-b-2 cursor-pointer ${focused === 0 ? "border-black": "border-gray-300"}`}>Incamake</span>
                 <span onClick={() => setFocused(1)} className={`pb-4 w-full border-b-2 cursor-pointer ${focused === 1 ? "border-black": "border-gray-300"}`}>Amakarita yo kwiga</span>
                 <span onClick={() => setFocused(2)} className={`pb-4 w-full border-b-2 cursor-pointer ${focused === 2 ? "border-black": "border-gray-300"}`}>Imyitozo</span>
             </div>
-            <div className="py-8 px-4">
+            <div className="py-8 px-0 md:px-4">
                 {focused === 0 && <Incamake id={slug.split("/")[1]} title={title}/>}
                 {focused === 1 && <Card note={notes[index]} length={notes.length} number={index} nav={(num) => setIndex(num)}/>}
                 {focused === 2 && (

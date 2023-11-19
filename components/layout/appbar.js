@@ -4,9 +4,10 @@ import "node_modules/flag-icons/css/flag-icons.min.css"
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import { useRouter } from "next/router"
-import axios from "axios"
+import Right from "./sideRight"
+import { AiOutlineMenu } from "react-icons/ai"
 
-export default function AppBar(){
+export default function AppBar({ contents }){
   const router = useRouter()
   const language = "rw"
     const [lang, setLang] = useState(language)
@@ -29,6 +30,16 @@ export default function AppBar(){
               <span className="hidden text-white group-hover:flex">{lang == "gb" ? "English" : "Kinyarwanda"}</span>
               <span className={`fi fi-${lang} text-2xl`}/>
             </div> */}
+                {contents && (
+                  <div className="group">
+                    <AiOutlineMenu color="white" className="h-8 w-8 flex md:hidden"/>
+                    <div className="flex-row-reverse absolute top-0 left-0 z-50">
+                        <div className="w-fit hidden group-hover:flex max-h-[90vh] bg-white shadow shadow-blue-950 z-50">
+                            <Right contents={contents}/>
+                        </div>
+                    </div>
+                </div>
+                )}
             <Link href="/"><Image src={logo} alt="image" width={500} height={500} className="h-8 w-8"/></Link>
             <Link href="/" passHref={true}><span className="text-xl font-bold text-white leading-none antialiased uppercase">Jiprovisional</span></Link>
             <Link passHref={true} href="/konti" className="border-2 hover:border-none border-white rounded-full group flex relative justify-center self-center hover:self-end items-center">

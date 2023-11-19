@@ -51,7 +51,18 @@ export default function Register( { loggedIn }) {
                         <BiWorld/>
                         Ikinyarwanda</Link>
                 </div>
-                <AiOutlineMenu color="white" className="h-6 w-6 flex md:hidden"/>
+                <div className="group">
+                    <AiOutlineMenu color="white" className="h-6 w-6 flex md:hidden"/>
+                    <div className="flex-row-reverse hidden group-hover:flex md:hidden absolute top-0 right-0 z-50">
+                        <div className="w-fit h-full bg-white shadow shadow-blue-950">
+                            <div className="flex flex-col gap-2">
+                                <Link href="/login" className="font-medium text-blue-950 border-b-2 p-2 pr-12 border-blue-950">Injira</Link>
+                                <Link href="/register" className="font-medium text-blue-950 border-b-2 p-2 pr-12 border-blue-950">Iyandikishe</Link>
+                                <Link href="/register" className="font-medium text-blue-950 border-b-2 p-2 pr-12 border-blue-950">Ikinyarwanda</Link>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <div className="bg-indigo-950 w-full flex flex-col justify-between sticky">

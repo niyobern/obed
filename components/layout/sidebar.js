@@ -13,7 +13,10 @@ export default function LeftSide(){
         axios.get("https://nvb_backend-1-z3745144.deta.app/users/details", { headers: { "Authorization": token}})
         .then((res) => setDetails(res.data))
         .catch((err) => {
-            if (err.response.status == 401){
+            const status = err?.response?.status
+            if (typeof status === "undefined"){
+                router.reload
+            }else if (status == 401){
                 router.replace("/login")
             }
         })
@@ -24,7 +27,7 @@ export default function LeftSide(){
         )
     }
     return (
-        <div className="flex flex-col gap-2 md:gap-8 pl-4 lg:pl-20 py-4">
+        <div className="w-full flex flex-col gap-2 md:gap-8 pl-4 lg:pl-20 py-4">
             <div className="flex flex-row gap-3">
                 <div className="flex items-center gap-4">
                     <Image

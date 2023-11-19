@@ -19,7 +19,7 @@ export default function Right({ contents, selected }){
       setCards(res.data.study.cards)
     })
     axios.get("https://nvb_backend-1-z3745144.deta.app/study/check", { headers: {"Authorization": token}})
-    .then((res) => setChecked(res.data))
+    .then((res) => setChecked(res.data.checked))
   })
   function handleFocus(index){
     const contentsCopy = [...newContents]
@@ -56,7 +56,7 @@ export default function Right({ contents, selected }){
     )
   } else if (contents){
     return (
-      <div className="flex flex-col">
+      <div className="flex flex-col overflow-auto">
         <div className="flex p-2 items-center gap-2">
           <AiOutlineMenu color="black" className="h-4 w-4"/>
           <span className='text-sm font-medium'>Ibice bigize isomo</span>

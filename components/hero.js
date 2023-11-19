@@ -7,8 +7,8 @@ import Link from "next/link";
 
 export default function Hero({ loggedIn }){
     return (
-        <div className="bg-indigo-950 w-full flex flex-col justify-between">
-            <div className="flex justify-between md:w-2/3 mx-auto py-6">
+        <div className="bg-indigo-950 w-full flex flex-col justify-between px-4 md:px-0">
+            <div className="flex justify-between w-full md:w-2/3 mx-auto py-6 items-center">
                 <div className="flex gap-2">
                     <Image
                       src="/images/logo.png"
@@ -31,7 +31,18 @@ export default function Hero({ loggedIn }){
                         <BiWorld/>
                         Ikinyarwanda</Link>
                 </div>
-                <AiOutlineMenu color="white" className="h-6 w-6 flex sm:hidden"/>
+                <div className="group">
+                    <AiOutlineMenu color="white" className="h-6 w-6 flex md:hidden"/>
+                    <div className="flex-row-reverse hidden group-hover:flex md:hidden absolute top-0 right-0 z-50">
+                        <div className="w-fit h-full bg-white shadow shadow-blue-950">
+                            <div className="flex flex-col gap-2">
+                                <Link href="/login" className="font-medium text-blue-950 border-b-2 p-2 pr-12 border-blue-950">Injira</Link>
+                                <Link href="/register" className="font-medium text-blue-950 border-b-2 p-2 pr-12 border-blue-950">Iyandikishe</Link>
+                                <Link href="/login" className="font-medium text-blue-950 border-b-2 p-2 pr-12 border-blue-950">Ikinyarwanda</Link>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div className="flex flex-col md:grid grid-cols-2 md:w-7/12 mx-auto py-24">
                 <div className="flex flex-col gap-8">

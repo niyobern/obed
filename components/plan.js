@@ -10,6 +10,9 @@ export default function Plan( { plan, user }){
             .then((res) => alert(res.data))
         }
     }
+    if (plan.cost === 0){
+        return <div className="hidden"></div>
+    }
     return (
         <div className="flex flex-col rounded border border-gray-200 w-full">
             <div className="bg-gray-100 p-2 text-lg font-medium border-b border-gray-200 w-full text-center">
