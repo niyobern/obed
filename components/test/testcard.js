@@ -3,10 +3,10 @@ import { useState } from "react"
 import { IoMdRadioButtonOff, IoMdRadioButtonOn } from "react-icons/io"
 
 export default function TestCard({ question, answer, back, index, total, slug }){
+    const [choice, setChoice] = useState(-1)
     if (question === undefined){
         return <div></div>
     }
-    const [choice, setChoice] = useState(-1)
     return (
         <div className="bg-white rounded w-full md:w-11/12 h-5/6 lg:w-2/3 flex flex-col overflow-auto">
             <div className="flex flex-col gap-2 p-2 md:p-12 lg:px-20 md:pt-4">
