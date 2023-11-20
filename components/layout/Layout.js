@@ -48,7 +48,7 @@ export default  function Layout( { children, right, title } ){
                   {right && <Right contents={right.contents}/>}
                 </div>
             </div>
-            <div className="sticky bottom-0 w-full"><Footer/></div>
+            <div className="w-full"><Footer/></div>
             <div className="md:hidden"><BottomNavBar/></div>
         </div>
     )
