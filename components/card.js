@@ -15,6 +15,8 @@ export default function Card({ length, number, note, nav}){
                   width={500}
                   height={300}
                   loader={(src) => src.src}
+                  priority
+                  loading="lazy"
                 />
               </div>
             )}
