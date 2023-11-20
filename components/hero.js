@@ -4,8 +4,16 @@ import { AiOutlineMenu } from 'react-icons/ai';
 import { BsFillPersonPlusFill } from 'react-icons/bs';
 import { BiWorld } from 'react-icons/bi';
 import Link from "next/link";
+import { useState, useEffect } from "react"
 
-export default function Hero({ loggedIn }){
+export default function Hero(){
+    const [loggedIn, setLoggedIn] = useState(false)
+    useEffect(() => {
+        const token = localStorage.getItem("token")
+        if (token != null){
+            setLoggedIn(true)
+        }
+    })
     return (
         <div className="bg-indigo-950 w-full flex flex-col justify-between px-4 md:px-0">
             <div className="flex justify-between w-full md:w-2/3 mx-auto py-6 items-center">
