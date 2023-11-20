@@ -16,8 +16,8 @@ export default  function Layout( { children, right, title } ){
         return (
         <div className="relative flex flex-col gap-4 w-full h-screen">
         { children }
-        <div className="fixed bottom-0 w-full"><Footer/></div>
-        <div className="sticky bottom-0 w-full invisible"><Footer/></div>
+        <div className="w-full"><Footer/></div>
+        <div className="sticky bottom-0 w-full hidden"><Footer/></div>
         </div>
         )
     }
