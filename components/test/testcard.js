@@ -25,6 +25,7 @@ export default function TestCard({ question, answer, back, index, total, slug })
                         className="h-48 w-fit"
                         loader={(src) => src.src}
                         priority={true}
+                        loading="eager"
                         unoptimized
                       />
                     </div>}
