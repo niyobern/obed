@@ -7,6 +7,10 @@ export default function TestCard({ question, answer, back, index, total, slug })
     if (question === undefined){
         return <div></div>
     }
+    function submit(){
+        answer(choice)
+        setChoice(-1)
+    }
     return (
         <div className="bg-white rounded w-full md:w-11/12 h-5/6 lg:w-2/3 flex flex-col overflow-auto">
             <div className="flex flex-col gap-2 p-2 md:p-12 lg:px-20 md:pt-4">
@@ -54,7 +58,7 @@ export default function TestCard({ question, answer, back, index, total, slug })
                 </div>
                 <div className="flex justify-between py-4">
                     <div onClick={() => index > 0 && back()} className="text-center text-white rounded p-1 font-medium bg-blue-600 w-3/12 cursor-pointer">Inyuma</div>
-                    <div onClick={() => answer(choice)} className="cursor-pointer text-center text-white rounded p-1 font-medium bg-blue-600 w-3/12">{index < 19? "Imbere": "Reba amanota"}</div>
+                    <div onClick={submit} className="cursor-pointer text-center text-white rounded p-1 font-medium bg-blue-600 w-3/12">{index < 19? "Imbere": "Reba amanota"}</div>
                 </div>
             </div>
         </div>
