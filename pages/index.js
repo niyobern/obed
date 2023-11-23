@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import VM from "@/components/vmission"
 import Hero from '@/components/hero';
 import Services from '@/components/services';
 import Benefits from '@/components/benefits';
@@ -10,6 +10,7 @@ export default function Index() {
       <div className='invisible w-full'><Hero/></div>
       <Services/>
       <Benefits/>
+      <V
     </main>
   )
 }
