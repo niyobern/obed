@@ -9,7 +9,7 @@ export default function NavBar(){
                     <div>Service</div>
                     <div>Contact</div>
                 </div>
-                <button className="hover:bg-white hover:text-cyan-900 rounded-l-full rounded-r-full p-2 px-4 border-orange-500 border">Book an appointment</button>
+                <button className="hover:bg-white hover:text-cyan-900 rounded-l-full rounded-r-full p-2 px-4 border-orange-500 border">Join The Team</button>
             </div>
         </div>
     )
