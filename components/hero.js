@@ -8,7 +8,7 @@ export default function Hero(){
             <div className=" flex flex-col md:grid grid-cols-4">
                 <div className="col-span-2 flex flex-col w-full px-20 py-8">
                     <div className="text-5xl font-medium leading-relaxed">Join the <span className="text-green-600">Restore Health Initiative</span> <br/> for your <br/> <span className="text-amber-400">Vitality</span></div>
-                    <div className="text-sm">Empowering Health and wellness through providing accessible community base</div>
+                    <div className="text-sm">Empowering Health and wellness through providing accessible community based interventions</div>
                     <div className="p-2 px-4 w-fit my-4 md:mt-6 lg:mt-8 rounded-l-full rounded-r-full bg-orange-600">Become a Member</div>
                 </div>
                 <div className="col-span-2 hidden:md:flex flex-col bg-transparent">
