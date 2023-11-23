@@ -1,4 +1,5 @@
 import NavBar from "./navbar";
+import Image from "next/image";
 
 export default function Hero(){
     return (
@@ -10,7 +11,9 @@ export default function Hero(){
                     <div className="text-sm">Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups</div>
                     <div className="p-2 px-4 w-fit my-4 md:mt-6 lg:mt-8 rounded-l-full rounded-r-full bg-orange-600">Book an Appointment</div>
                 </div>
-                <div className="col-span-1 hidden:md:flex flex-col"></div>
+                <div className="col-span-1 hidden:md:flex flex-col">
+                    <Image src="/images/bg.png" alt="Image" width={500} height={500}/>
+                </div>
             </div>
         </div>
     )
