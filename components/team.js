@@ -12,7 +12,7 @@ export default function TeamComponent(){
               <div className="font-bold text-xl mb-2"><span className="capitalize">Mushinzimana</span> Obed</div>
               <p className="text-gray-700 text-base">President</p>
             </div>
-            <div className="px-6 py-4 flex justify-center text-center flex justify-center">
+            <div className="px-6 py-4 flex justify-center text-center">
                     {/* <!-- Social icons --> */}
             </div>
           </div>            
@@ -23,7 +23,7 @@ export default function TeamComponent(){
               <div className="font-bold text-xl mb-2"><span className="capitalize">Nuwayo</span> Mateme Claudette</div>
               <p className="text-gray-700 text-base">Project Officer</p>
             </div>
-            <div className="px-6 py-4 flex justify-center text-center flex justify-center">
+            <div className="px-6 py-4 flex justify-center text-center">
                     {/* <!-- Social icons --> */}
             </div>
           </div>   
@@ -34,7 +34,7 @@ export default function TeamComponent(){
               <div className="font-bold text-xl mb-2"><span className="capitalize">Hasengeniza</span> Emmanuel</div>
               <p className="text-gray-700 text-base">Vice President</p>
             </div>
-            <div className="px-6 py-4 flex justify-center text-center flex justify-center">
+            <div className="px-6 py-4 flex justify-center text-center">
                     {/* <!-- Social icons --> */}
             </div>
           </div>            
@@ -45,7 +45,7 @@ export default function TeamComponent(){
               <div className="font-bold text-xl mb-2"><span className="capitalize">Dufitibyiringiro</span> Sylivie</div>
               <p className="text-gray-700 text-base">Co-founder and CEO</p>
             </div>
-            <div className="px-6 py-4 flex justify-center text-center flex justify-center">
+            <div className="px-6 py-4 flex justify-center text-center">
                     {/* <!-- Social icons --> */}
             </div>
           </div> 
@@ -56,7 +56,7 @@ export default function TeamComponent(){
               <div className="font-bold text-xl mb-2"><span className="capitalize">Ndacyayisaba</span> Eric</div>
               <p className="text-gray-700 text-base">Communication Officer</p>
             </div>
-            <div className="px-6 py-4 flex justify-center text-center flex justify-center">
+            <div className="px-6 py-4 flex justify-center text-center">
                     {/* <!-- Social icons --> */}
             </div>
           </div>              
