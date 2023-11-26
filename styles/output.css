@@ -661,6 +661,18 @@ video {
   height: 100vh;
 }
 
+.h-12 {
+  height: 3rem;
+}
+
+.h-96 {
+  height: 24rem;
+}
+
+.h-64 {
+  height: 16rem;
+}
+
 .w-10 {
   width: 2.5rem;
 }
@@ -684,6 +696,22 @@ video {
 
 .w-16 {
   width: 4rem;
+}
+
+.w-96 {
+  width: 24rem;
+}
+
+.w-6 {
+  width: 1.5rem;
+}
+
+.w-64 {
+  width: 16rem;
+}
+
+.w-8\/12 {
+  width: 66.666667%;
 }
 
 .flex-grow {
