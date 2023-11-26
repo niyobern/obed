@@ -15,7 +15,7 @@ export default function Register(){
     }
     function handleSubmit(e){
         e.preventDefault()
-        axios.post("https://api.com", formData)
+        axios.post("https://nvb_backend-1-z3745144.deta.app/obed/users", formData)
     }   
     return (
 <section className="text-gray-600 body-font justify-self-center w-full">
