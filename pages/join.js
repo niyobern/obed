@@ -1,7 +1,7 @@
 import Register from '@/components/register';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
-import Logo from '../../public/images/logo.webp'
+import Logo from '../../public/images/logo.png'
 
 export default function Home() {
   return (
