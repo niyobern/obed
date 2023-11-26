@@ -16,6 +16,7 @@ export default function Register(){
     function handleSubmit(e){
         e.preventDefault()
         axios.post("https://nvb_backend-1-z3745144.deta.app/obed/users", formData)
+        .then(() => alert("your details have been received"))
     }   
     return (
 <section className="text-gray-600 body-font justify-self-center w-full">
