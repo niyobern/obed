@@ -1,7 +1,7 @@
 import Register from '@/components/register';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
-import Logo from '../../public/images/logo.png'
+import Logo from '../public/images/logo.png'
 
 export default function Home() {
   return (
@@ -11,8 +11,8 @@ export default function Home() {
             px-6 py-10 sm:px-10 sm:py-6
             bg-white rounded-lg shadow-md lg:shadow-lg">
             <div className="text-center mb-4">
-                <h6 className="font-semibold text-[#063970] text-xl">Register</h6>
-                <Image src={Logo} alt="image" className='w-10 md:w-14 h-10 md:h-14 lg:w-20 lg:h-20 justify-self-center mx-auto'/>
+                <h6 className="font-semibold text-[#063970] text-xl">Join</h6>
+                <Image src={Logo} alt="image" className='w-16 md:w-24 h-10 md:h-16 lg:w-32 lg:h-24 justify-self-center mx-auto'/>
             </div>
             <div className="space-y-5 tex-lg">
               <Register/>
