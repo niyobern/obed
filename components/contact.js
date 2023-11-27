@@ -2,7 +2,6 @@ import Image from "next/image";
 import image from "../public/images/bg.png";
 
 export default function Contact(){
-    const text = JSON.parse(data)
     return (
             <div className="flex flex-col h-fit md:grid grid-rows-6 grid-cols-2">
                 <div className="row-start-1 col-span-full row-end-4 w-full pb-8 relative flex flex-col">
@@ -53,7 +52,7 @@ export default function Contact(){
                             </div>
                             <div className="flex flex-col py-2">
                                 <label htmlFor="message" className="pb-1 text-sm uppercase invisible">Messsage</label>
-                                <div className="bg-sky-600 rounded hover:bg-green-600  active:bg-red-500 h-20 cursor-pointer w-full text-xl font-bold uppercase text-white text-center flex items-center justify-center" id="contact15">{text.contact15}</div>
+                                <div className="bg-sky-600 rounded hover:bg-green-600  active:bg-red-500 h-20 cursor-pointer w-full text-xl font-bold uppercase text-white text-center flex items-center justify-center" id="contact15">text 15</div>
                             </div>
                         </div>
                     </div>
