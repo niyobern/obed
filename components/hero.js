@@ -13,7 +13,7 @@ export default function Hero(){
                     <Link href="/join" className="p-2 px-4 w-fit my-4 md:mt-6 lg:mt-8 rounded-l-full rounded-r-full bg-orange-600">Become a Member</Link>
                 </div>
                 <div className="col-span-2 hidden:md:flex flex-col bg-transparent">
-                    <Image src="/images/unspash.jpg" alt="Image" width={600} height={600} className="bg-transparent"/>
+                    <Image src="/images/bg.png" alt="Image" width={600} height={600} className="bg-transparent"/>
                 </div>
             </div>
         </div>
