@@ -1,5 +1,5 @@
 import Image from "next/image";
-import image from "../public/images/bg.png";
+import image from "../public/images/unspash.jpg";
 
 export default function Contact(){
     return (
