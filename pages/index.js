@@ -8,8 +8,8 @@ import Contact from "@/components/contact";
 export default function Index() {
   return (
     <main>
-      <div className='absolute w-full top-0'><Hero/></div>
-      <div className='invisible w-full'><Hero/></div>
+      <div className='relative md:absolute w-full top-0'><Hero/></div>
+      <div className='hidden md:flex invisible w-full'><Hero/></div>
       <Services/>
       <Benefits/>
       <div className="relative bg-black m-2 md:m-12 lg:m-16">
