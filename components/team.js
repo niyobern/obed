@@ -50,6 +50,7 @@ export default function TeamComponent(){
             <div className="px-6 py-4 flex justify-center text-center">
                     {/* <!-- Social icons --> */}
             </div>
+          </div>
            {/* <!-- Team member card --> */}
            <div className="bg-white rounded overflow-hidden shadow-lg md:m-4 flex flex-col justify-between">
             <Image height={500} width={500} className="bg-white w-full h-fit rounded-full px-2 md:px-4" src="/images/6.jpeg" alt="Team member photo"></Image>
@@ -62,7 +63,6 @@ export default function TeamComponent(){
             </div>
           </div> 
         </div>
-          </div>
       </div>
     )
 }
