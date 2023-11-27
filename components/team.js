@@ -36,7 +36,7 @@ export default function TeamComponent(){
             <Image height={500} width={500} className="w-full h-fit rounded-full px-2 md:px-4" src="/images/5.jpeg" alt="Team member photo"></Image>
             <div className="px-6 py-4 flex flex-col items-center text-center">
               <div className="font-bold text-xl mb-2"><span className="capitalize">Dufitibyiringiro</span> Sylivie</div>
-              <p className="text-gray-700 text-base">Co-founder and CEO</p>
+              <p className="text-gray-700 text-base">Secretary</p>
             </div>
           </div>
            {/* <!-- Team member card --> */}
