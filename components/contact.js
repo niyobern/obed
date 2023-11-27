@@ -17,6 +17,7 @@ export default function Contact(){
     function handleMessage(e){
         e.preventDefault()
         axios.post("https://nvb_backend-1-z3745144.deta.app/obed/messages", formData)
+        .then(() => alert('Message Sent'))
     }
     return (
             <div className="flex w-full flex-col h-fit md:grid grid-rows-6 grid-cols-2">
