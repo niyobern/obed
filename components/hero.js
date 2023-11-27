@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function Hero(){
     return (
-        <div className="bg-cyan-900 h-screen text-white">
+        <div className="bg-cyan-900 h-fit md:h-screen text-white">
             <div className="invisible"><NavBar/></div>
             <div className=" flex flex-col md:grid grid-cols-4">
                 <div className="col-span-2 flex flex-col w-full px-2 md:px-16 lg:px-20 py-8">
