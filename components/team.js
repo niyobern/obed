@@ -12,9 +12,6 @@ export default function TeamComponent(){
               <div className="font-bold text-xl mb-2"><span className="capitalize">Mushinzimana</span> Obed</div>
               <p className="text-gray-700 text-base">President</p>
             </div>
-            <div className="px-6 py-4 flex justify-center text-center">
-                    {/* <!-- Social icons --> */}
-            </div>
           </div>            
            {/* <!-- Team member card --> */}
           <div className="w-full bg-white rounded overflow-hidden shadow-lg md:m-4 flex flex-col justify-between">
@@ -23,9 +20,6 @@ export default function TeamComponent(){
               <div className="font-bold text-xl mb-2"><span className="capitalize">Nuwayo</span> Mateme Claudette</div>
               <p className="text-gray-700 text-base">Project Officer</p>
             </div>
-            <div className="px-6 py-4 flex justify-center text-center">
-                    {/* <!-- Social icons --> */}
-            </div>
           </div>   
            {/* <!-- Team member card --> */}
           <div className="w-full bg-white rounded overflow-hidden shadow-lg md:m-4 flex flex-col justify-between">
@@ -33,9 +27,6 @@ export default function TeamComponent(){
             <div className="px-6 py-4 flex flex-col items-center text-center">
               <div className="font-bold text-xl mb-2"><span className="capitalize">Hasengeniza</span> Emmanuel</div>
               <p className="text-gray-700 text-base">Vice President</p>
-            </div>
-            <div className="px-6 py-4 flex justify-center text-center">
-                    {/* <!-- Social icons --> */}
             </div>
           </div>                         
         </div>
@@ -47,9 +38,6 @@ export default function TeamComponent(){
               <div className="font-bold text-xl mb-2"><span className="capitalize">Dufitibyiringiro</span> Sylivie</div>
               <p className="text-gray-700 text-base">Co-founder and CEO</p>
             </div>
-            <div className="px-6 py-4 flex justify-center text-center">
-                    {/* <!-- Social icons --> */}
-            </div>
           </div>
            {/* <!-- Team member card --> */}
            <div className="bg-white rounded overflow-hidden shadow-lg md:m-4 flex flex-col justify-between">
@@ -57,9 +45,6 @@ export default function TeamComponent(){
             <div className="px-6 py-4 flex flex-col items-center text-center">
               <div className="font-bold text-xl mb-2"><span className="capitalize">Ndacyayisaba</span> Eric</div>
               <p className="text-gray-700 text-base">Communication Officer</p>
-            </div>
-            <div className="px-6 py-4 flex justify-center text-center">
-                    {/* <!-- Social icons --> */}
             </div>
           </div> 
         </div>
