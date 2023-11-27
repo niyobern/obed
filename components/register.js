@@ -46,16 +46,15 @@ export default function Register(){
         { formData.profile === "Student" && (
                 <div className="relative flex-grow w-full">
                   <label htmlFor="university"className="leading-7 text-sm text-gray-600">University</label>
-                  <input list="institutions" type="text" id="university" name="university" required={true} onChange={handleChange} value={formData.university} className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-transparent focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"/>
-                  <datalist id="institutions">
-                    <option value="UR Huye"/>
-                    <option value="UR Rwamagana"/>
-                    <option value="Mount Kigali University"/>
-                    <option value="Kibogora Polytechnic"/>
-                    <option value="AUCA"/>
-                    <option value="Ruli HI"/>
+                  <select list="institutions" type="text" id="university" name="university" required={true} onChange={handleChange} value={formData.university} className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-transparent focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                    <option value="UR Huye"> University of Rwanda - Huye</option>
+                    <option value="UR Rwamagana">University of Rwanda - Rwamagana</option>
+                    <option value="Mount Kigali University">Mount Kigali UNited</option>
+                    <option value="Kibogora Polytechnic">Kibogora Polytechnic</option>
+                    <option value="AUCA">AUCA</option>
+                    <option value="Ruli HI"></option>
                     <option value="EA Christian College"/>
-                  </datalist>
+                  </select>
                 </div>
         )}
       <div className="relative flex flex-col w-full h-20 justify-end">
