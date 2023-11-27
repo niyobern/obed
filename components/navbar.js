@@ -12,7 +12,7 @@ export default function NavBar(){
                     <div>Service</div>
                     <div>Contact</div>
                 </div>
-                <Link href="/join" className="hover:bg-white hover:text-cyan-900 rounded-l-full rounded-r-full p-2 px-4 border-orange-500 border">Join The Team</Link>
+                <Link href="/join" className="hover:bg-white hover:text-cyan-900 rounded-l-full h-fit w-fit rounded-r-full p-2 px-4 border-orange-500 border">Join The Team</Link>
             </div>
         </div>
     )
