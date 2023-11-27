@@ -6,7 +6,7 @@ export default function TeamComponent(){
             <h1 className="text-4xl font-bold text-center text-cyan-900 py-4">Meet Our Team</h1>
             <div className="flex flex-col md:grid grid-cols-3 gap-4 md:gap-12 flex-wrap justify-center">                 
            {/* <!-- Team member card --> */}
-          <div className="w-full bg-white rounded overflow-hidden shadow-lg md:m-4 flex flex-col justify-between">
+          <div className="w-full bg-white rounded overflow-hidden shadow-lg flex flex-col justify-between">
             <Image height={500} width={500} className="w-full h-fit rounded-full px-2 md:px-4" src="/images/1.png" alt="Team member photo"></Image>
             <div className="px-6 py-4 flex flex-col items-center text-center">
               <div className="font-bold text-xl mb-2"><span className="capitalize">Mushinzimana</span> Obed</div>
@@ -14,7 +14,7 @@ export default function TeamComponent(){
             </div>
           </div>            
            {/* <!-- Team member card --> */}
-          <div className="w-full bg-white rounded overflow-hidden shadow-lg md:m-4 flex flex-col justify-between">
+          <div className="w-full bg-white rounded overflow-hidden shadow-lg flex flex-col justify-between">
             <Image height={500} width={500} className="w-full h-fit rounded-full px-2 md:px-4" src="/images/3.jpeg" alt="Team member photo"></Image>
             <div className="px-6 py-4 flex flex-col items-center text-center">
               <div className="font-bold text-xl mb-2"><span className="capitalize">Hasengeniza</span> Emmanuel</div>
@@ -22,7 +22,7 @@ export default function TeamComponent(){
             </div>
           </div>                         
            {/* <!-- Team member card --> */}
-          <div className="w-full bg-white rounded overflow-hidden shadow-lg md:m-4 flex flex-col justify-between">
+          <div className="w-full bg-white rounded overflow-hidden shadow-lg flex flex-col justify-between">
             <Image height={500} width={500} className="bg-white w-full h-fit rounded-full px-2 md:px-4" src="/images/2.png" alt="Team member photo"></Image>
             <div className="px-6 py-4 flex flex-col items-center text-center">
               <div className="font-bold text-xl mb-2"><span className="capitalize">Nuwayo</span> Mateme Claudette</div>
@@ -32,7 +32,7 @@ export default function TeamComponent(){
         </div>
         <div className="grid grid-cols-2 gap-8 justify-center mx-auto w-8/12">
            {/* <!-- Team member card --> */}
-           <div className="bg-white rounded overflow-hidden shadow-lg md:m-4 flex flex-col justify-between">
+           <div className="bg-white rounded overflow-hidden shadow-lg flex flex-col justify-between">
             <Image height={500} width={500} className="w-full h-fit rounded-full px-2 md:px-4" src="/images/5.jpeg" alt="Team member photo"></Image>
             <div className="px-6 py-4 flex flex-col items-center text-center">
               <div className="font-bold text-xl mb-2"><span className="capitalize">Dufitibyiringiro</span> Sylivie</div>
@@ -40,7 +40,7 @@ export default function TeamComponent(){
             </div>
           </div>
            {/* <!-- Team member card --> */}
-           <div className="bg-white rounded overflow-hidden shadow-lg md:m-4 flex flex-col justify-between">
+           <div className="bg-white rounded overflow-hidden shadow-lg flex flex-col justify-between">
             <Image height={500} width={500} className="bg-white w-full h-fit rounded-full px-2 md:px-4" src="/images/6.jpeg" alt="Team member photo"></Image>
             <div className="px-6 py-4 flex flex-col items-center text-center">
               <div className="font-bold text-xl mb-2"><span className="capitalize">Ndacyayisaba</span> Eric</div>
