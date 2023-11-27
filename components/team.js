@@ -41,7 +41,7 @@ export default function TeamComponent(){
         </div>
         <div className="grid grid-cols-2 gap-8 justify-center mx-auto w-8/12">
            {/* <!-- Team member card --> */}
-           <div className="w-full bg-white rounded overflow-hidden shadow-lg md:m-4 flex flex-col justify-between">
+           <div className="bg-white rounded overflow-hidden shadow-lg md:m-4 flex flex-col justify-between">
             <Image height={500} width={500} className="w-full h-fit rounded-full px-2 md:px-4" src="/images/5.jpeg" alt="Team member photo"></Image>
             <div className="px-6 py-4 flex flex-col items-center text-center">
               <div className="font-bold text-xl mb-2"><span className="capitalize">Dufitibyiringiro</span> Sylivie</div>
@@ -51,7 +51,7 @@ export default function TeamComponent(){
                     {/* <!-- Social icons --> */}
             </div>
            {/* <!-- Team member card --> */}
-           <div className="w-full bg-white rounded overflow-hidden shadow-lg md:m-4 flex flex-col justify-between">
+           <div className="bg-white rounded overflow-hidden shadow-lg md:m-4 flex flex-col justify-between">
             <Image height={500} width={500} className="bg-white w-full h-fit rounded-full px-2 md:px-4" src="/images/6.jpeg" alt="Team member photo"></Image>
             <div className="px-6 py-4 flex flex-col items-center text-center">
               <div className="font-bold text-xl mb-2"><span className="capitalize">Ndacyayisaba</span> Eric</div>
