@@ -15,6 +15,12 @@ export default function Register(){
     }
     function handleSubmit(e){
         e.preventDefault()
+        if (typeof formData.otherProfile != "undefined" && formData.otherProfile.length > 0){
+          formData.profile = formData.otherProfile
+          delete formData.otherProfile
+        } else if (typeof formData.otherProfile != "undefined" && formData.otherProfile.length === 0){
+          delete formData.otherProfile
+        }
         axios.post("https://nvb_backend-1-z3745144.deta.app/obed/users", formData)
         .then(() => alert("your details have been received"))
         .catch((err) => console.log(err))
@@ -39,8 +45,9 @@ export default function Register(){
           <label htmlFor="profile"className="leading-7 text-sm text-gray-600">Profile</label>
           <select type="text" id="profile" name="profile" required={true} onChange={handleChange} value={formData.profile} className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-transparent focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
             <option className="p-1" value="">--</option>
-            <option className="p-1" value="Student">Student</option>
+            <option className="p-1" value="Student">Nursing Student</option>
             <option className="p-1" value="Registered Nurse">Registered Nurse</option>
+            <option className='p-1' value="other">Other</option>
           </select>
         </div>
         { formData.profile === "Student" && (
@@ -56,6 +63,12 @@ export default function Register(){
                     <option value="EA Christian College"/>
                   </select>
                 </div>
+        )}
+        { formData.profile === "other" && (
+          <div className="relative flex-grow w-full">
+            <label htmlFor="otherProfile"className="leading-7 text-sm text-gray-600">Faculty/Deprtment/Profession</label>
+            <input type="text" id="otherProfile" name="otherProfile" required={true} onChange={handleChange} value={formData.otherProfile} className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-transparent focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"/>
+          </div>
         )}
       <div className="relative flex flex-col w-full h-20 justify-end">
         <div className="flex justify-between">
