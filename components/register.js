@@ -38,8 +38,8 @@ export default function Register(){
         <div className="relative flex-grow w-full">
           <label htmlFor="profile"className="leading-7 text-sm text-gray-600">Profile</label>
           <select type="text" id="profile" name="profile" required={true} onChange={handleChange} value={formData.profile} className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-transparent focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
-            <option value="Student"/>
-            <option value="Registered Nurse"/>
+            <option className="p-1" value="Student">Student</option>
+            <option className="p-1" value="Registered Nurse">Registered Nurse</option>
           </select>
         </div>
         { formData.profile === "Student" && (
