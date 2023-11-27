@@ -23,7 +23,7 @@ export default function Contact(){
                 <div className="row-start-1 col-span-full row-end-4 w-full pb-8 relative flex flex-col">
                     <Image alt="Image" fill={true} src={image} className="object-fill"/>
                     <h1 className="py-8 self-center md:px-24 z-10 text-white uppercase text-3xl font-semibold text-center" id="contact1">CONTACT US FOR SWIFT SUPPORT</h1>
-                    <p className="md:w-1/2 self-center z-10 text-center text-white bg-gray-900 bg-opacity-50" id="contact2">embrace wellness with RestoreHealth! connect for support and embark on a journey to vibrant living. your health, our mission!"</p>
+                    <p className="md:w-1/2 self-center z-10 text-center text-white bg-gray-900 bg-opacity-50" id="contact2">embrace wellness with RestoreHealth! connect for support and embark on a journey to vibrant living. your health, our mission!</p>
                 </div>
                 <div className="row-start-4 col-span-full row-span-3 w-full bg-green-400 z-10 hidden md:flex"></div>
                 <div className="row-start-3 col-span-full row-span-4 md:p-2 bg-gray-100 md:mx-24 z-20 flex flex-col md:grid grid-cols-5 grid-rows-2 gap-y-4 gap-x-8">
