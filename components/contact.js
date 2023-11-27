@@ -40,7 +40,7 @@ export default function Contact(){
                             {/* <svg className="h-16 w-16 text-green-500"  fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"/></svg> */}
                         </div>
                         <span className="col-start-2 col-span-4 row-span-1 self-center text-gray-600 pl-2" id="contact7"></span>
-                        <div className="col-start-2 col-span-4 row-span-2 self-center text-white bg-sky-600 cursor-pointer hover:bg-green-600 active:bg-red-500 py-2 px-6 justify-self-start" id="contact6"></div>
+                        <div className="col-start-2 col-span-4 row-span-2 self-center text-white bg-white cursor-pointer hover:bg-green-600 active:bg-red-500 py-2 px-6 justify-self-start" id="contact6"></div>
                     </div>
                     <div className="flex flex-col col-start-3 col-span-3 row-span-2 bg-white shadow-xl pt-8">
                         <h1 className="text-xl font-bold self-center text-gray-800" id="contact8">Send us a message</h1>
