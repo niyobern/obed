@@ -12,7 +12,7 @@ export default function Index() {
       <div className='hidden md:flex invisible w-full'><Hero/></div>
       <Services/>
       <Benefits/>
-      <div className="relative bg-black m-2 md:m-12 lg:m-16">
+      <div className="relative bg-cyan-900 m-2 md:m-12 lg:m-16">
         <VM/>
       </div>
       <div id="team" className="p-2 md:p-12 lg:p-16"><TeamComponent/></div>
