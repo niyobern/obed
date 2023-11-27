@@ -44,7 +44,7 @@ export default function Contact(){
                     </div>
                     <div className="flex flex-col col-start-3 col-span-3 row-span-2 bg-white shadow-xl pt-8">
                         <h1 className="text-xl font-bold self-center text-gray-800" id="contact8">Send us a message</h1>
-                        <div className="text-sm sefl center text-center py-2" id="contact9">you can ask for help, book a meeting with our experts or give us a suggestion</div>
+                        {/* <div className="text-sm sefl center text-center py-2" id="contact9">you can ask for help, book a meeting with our experts or give us a suggestion</div> */}
                         <div className="flex flex-col md:grid grid-cols-2 p-2 md:px-10 gap-2">
                             <div className="flex flex-col py-2">
                                 <label htmlFor="firstName" className="pb-1 text-sm uppercase text-gray-700" id="contact13">FIRST NAME</label>
