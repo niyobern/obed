@@ -37,16 +37,24 @@ export default function Register(){
         </div>
         <div className="relative flex-grow w-full">
           <label htmlFor="profile"className="leading-7 text-sm text-gray-600">Profile</label>
-          <input list="profiles" type="text" id="profile" name="profile" required={true} onChange={handleChange} value={formData.profile} className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-transparent focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"/>
-          <datalist id="profiles">
+          <select type="text" id="profile" name="profile" required={true} onChange={handleChange} value={formData.profile} className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-transparent focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
             <option value="Student"/>
             <option value="Registered Nurse"/>
-          </datalist>
+          </select>
         </div>
         { formData.profile === "Student" && (
                 <div className="relative flex-grow w-full">
-                  <label htmlFor="name"className="leading-7 text-sm text-gray-600">Full Name</label>
-                  <input type="text" id="university" name="university" required={true} onChange={handleChange} value={formData.university} className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-transparent focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"/>
+                  <label htmlFor="university"className="leading-7 text-sm text-gray-600">University</label>
+                  <input list="institutions" type="text" id="university" name="university" required={true} onChange={handleChange} value={formData.university} className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-transparent focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"/>
+                  <datalist id="institutions">
+                    <option value="UR Huye"/>
+                    <option value="UR Rwamagana"/>
+                    <option value="Mount Kigali University"/>
+                    <option value="Kibogora Polytechnic"/>
+                    <option value="AUCA"/>
+                    <option value="Ruli HI"/>
+                    <option value="EA Christian College"/>
+                  </datalist>
                 </div>
         )}
       <div className="relative flex flex-col w-full h-20 justify-end">
