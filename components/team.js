@@ -2,7 +2,7 @@ import Image from "next/image"
 
 export default function TeamComponent(){
     return (
-        <div className="bg-gray-100 m-2 md:m-12 lg:m-16">
+        <div className="bg-gray-100">
             <h1 className="text-4xl font-bold text-center text-cyan-900 py-4">Meet Our Team</h1>
             <div className="flex flex-col md:grid grid-cols-3 gap-4 md:gap-12 flex-wrap justify-center">                 
            {/* <!-- Team member card --> */}
