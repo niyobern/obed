@@ -35,6 +35,20 @@ export default function Register(){
           <label htmlFor="name"className="leading-7 text-sm text-gray-600">Full Name</label>
           <input type="text" id="name" name="name" required={true} onChange={handleChange} value={formData.name} className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-transparent focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"/>
         </div>
+        <div className="relative flex-grow w-full">
+          <label htmlFor="profile"className="leading-7 text-sm text-gray-600">Profile</label>
+          <input list="profiles" type="text" id="profile" name="profile" required={true} onChange={handleChange} value={formData.profile} className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-transparent focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"/>
+          <datalist id="profiles">
+            <option value="Student"/>
+            <option value="Registered Nurse"/>
+          </datalist>
+        </div>
+        { formData.profile === "Student" && (
+                <div className="relative flex-grow w-full">
+                  <label htmlFor="name"className="leading-7 text-sm text-gray-600">Full Name</label>
+                  <input type="text" id="university" name="university" required={true} onChange={handleChange} value={formData.university} className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-transparent focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"/>
+                </div>
+        )}
       <div className="relative flex flex-col w-full h-20 justify-end">
         <div className="flex justify-between">
             <button onClick={handleSubmit} className="text-white w-full bg-green-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg font-bold">Register</button>
