@@ -15,7 +15,7 @@ export default function Index() {
       <div className="relative bg-black m-2 md:m-12 lg:m-16">
         <VM/>
       </div>
-      <div className="p-2 md:p-12 lg:p-16"><TeamComponent/></div>
+      <div id="team" className="p-2 md:p-12 lg:p-16"><TeamComponent/></div>
       <Contact/>
     </main>
   )
