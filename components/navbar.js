@@ -7,10 +7,10 @@ export default function NavBar(){
             <Image src={Logo} alt="image" className='w-16 md:w-24 h-10 md:h-16 lg:w-32 lg:h-24'/>
             <div className="flex gap-20">
                 <div className="hidden md:flex gap-2 md:gap-4 lg:gap-6 xl:gap-8">
-                    <div>Home</div>
-                    <div>About</div>
-                    <div>Service</div>
-                    <div>Contact</div>
+                    <Link href="/">Home</Link>
+                    <Link href="#about">About</Link>
+                    <Link href="#service">Service</Link>
+                    <Link href="#contact">Contact</Link>
                 </div>
                 <Link href="/join" className="hover:bg-white hover:text-cyan-900 rounded-l-full h-fit w-fit rounded-r-full p-2 px-4 border-orange-500 border">Join The Team</Link>
             </div>

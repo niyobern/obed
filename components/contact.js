@@ -20,7 +20,7 @@ export default function Contact(){
         .then(() => alert('Message Sent'))
     }
     return (
-            <div className="flex w-full flex-col h-fit md:grid grid-rows-6 grid-cols-2">
+            <div id="contact" className="flex w-full flex-col h-fit md:grid grid-rows-6 grid-cols-2">
                 <div className="row-start-1 col-span-full row-end-4 w-full pb-8 relative flex flex-col">
                     <Image alt="Image" fill={true} src={image} className="object-fill"/>
                     <h1 className="py-8 self-center md:px-24 z-10 text-white uppercase text-3xl font-semibold text-center" id="contact1">CONTACT US FOR SWIFT SUPPORT</h1>

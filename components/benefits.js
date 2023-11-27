@@ -2,7 +2,7 @@ import { FaCircleCheck } from "react-icons/fa6";
 
 export default function Benefits(){
     return (
-        <div className="px-2 md:px-12 lg:px-16 pt-4 md:pt-8">
+        <div className="px-2 md:px-12 lg:px-16 pt-4 md:pt-8" id="benefits">
             <div className="flex flex-col bg-cyan-700 p-0 md:p-8 h-fit">
                 <div className="text-center pt-4 text-3xl font-medium text-white">Discover The exlusive benefits awaiting you</div>
                 <p className="py-4 text-white text-sm text-center">We encourage you to join the team and these are some of the benefits waiting to meet you onboard ...</p>

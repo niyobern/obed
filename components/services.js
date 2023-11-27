@@ -3,7 +3,7 @@ import NavBar from "./navbar";
 export default function Services(){
     return (
         <div>
-            <div className="flex flex-col gap-12 px-2 md:px-6 lg:px-10">
+            <div className="flex flex-col gap-12 px-2 md:px-6 lg:px-10" id="services">
                 <h1 className="text-center text-2xl font-bold">Our services</h1>
                 <div className="flex flex-col md:grid grid-cols-4 gap-6 lg:gap-6">
                     <div className="flex flex-col rounded-3xl p-6 justify-between h-full gap-2 text-center items-center hover:bg-sky-500 group">
