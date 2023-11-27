@@ -3,6 +3,7 @@ import Hero from '@/components/hero';
 import Services from '@/components/services';
 import Benefits from '@/components/benefits';
 import TeamComponent from '@/components/team'
+import Contact from "@/components/contact";
 
 export default function Index() {
   return (
@@ -16,6 +17,7 @@ export default function Index() {
         <VM/>
       </div>
       <div className="p-2 md:p-12 lg:p-16"><TeamComponent/></div>
+      <Contact/>
     </main>
   )
 }
