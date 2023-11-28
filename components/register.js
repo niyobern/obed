@@ -52,6 +52,7 @@ export default function Register(){
                 <div className="relative flex-grow w-full">
                   <label htmlFor="institution"className="leading-7 text-sm text-gray-600">University</label>
                   <select list="institutions" type="text" id="institution" name="institution" required={true} onChange={handleChange} value={formData.institution} className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-transparent focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                    <option value="">--</option>
                     <option value="UR Huye"> University of Rwanda - Huye</option>
                     <option value="UR Rwamagana">University of Rwanda - Rwamagana</option>
                     <option value="Mount Kigali University">Mount Kigali UNited</option>
