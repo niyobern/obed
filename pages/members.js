@@ -22,7 +22,7 @@ const UserTable = ({users}) => {
         </thead>
         <tbody>
           {users && users.map((user) => (
-            <tr key={user.id} className="border-b">
+            <tr key={user.key} className="border-b">
               <td className="py-2 px-4 border-r">{user.name}</td>
               <td className="py-2 px-4 border-r">{user.email}</td>
               <td className="py-2 px-4 border-r">{user.phone}</td>

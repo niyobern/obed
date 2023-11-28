@@ -53,8 +53,8 @@ export default function Register(){
                     <option value="Mount Kigali University">Mount Kigali UNited</option>
                     <option value="Kibogora Polytechnic">Kibogora Polytechnic</option>
                     <option value="AUCA">AUCA</option>
-                    <option value="Ruli HI"></option>
-                    <option value="EA Christian College"/>
+                    <option value="Ruli HI">RURI HI</option>
+                    <option value="EA Christian College">EA Christian College</option>
                   </select>
                 </div>
         )}
