@@ -1,10 +1,10 @@
-import Register from '@/components/register';
 import { useState } from 'react';
-import Image from 'next/image';
-import Logo from '../../public/images/logo.png'
+import { useRouter } from 'next/router';
 
 export default function Email() {
   const [formData, setFormData] = useState({})
+  const router = useRouter()
+  const code = router.query.code
   function handleChange(e){
     const target = e.target
     const name = target.name
@@ -16,6 +16,7 @@ export default function Email() {
 }
 function handleSubmit(e){
     e.preventDefault()
+    formData.code = code
     axios.post("https://nvb_backend-1-z3745144.deta.app/obed/reply", formData)
     .then(() => alert("Email Sent"))
     .catch((err) => console.log(err))
