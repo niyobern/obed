@@ -15,12 +15,6 @@ export default function Register(){
     }
     function handleSubmit(e){
         e.preventDefault()
-        if (typeof formData.otherProfile != "undefined" && formData.otherProfile.length > 0){
-          formData.profile = formData.otherProfile
-          delete formData.otherProfile
-        } else if (typeof formData.otherProfile != "undefined" && formData.otherProfile.length === 0){
-          delete formData.otherProfile
-        }
         axios.post("https://nvb_backend-1-z3745144.deta.app/obed/users", formData)
         .then(() => alert("your details have been received"))
         .catch((err) => console.log(err))
@@ -52,8 +46,8 @@ export default function Register(){
         </div>
         { formData.profile === "Student" && (
                 <div className="relative flex-grow w-full">
-                  <label htmlFor="university"className="leading-7 text-sm text-gray-600">University</label>
-                  <select list="institutions" type="text" id="university" name="university" required={true} onChange={handleChange} value={formData.university} className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-transparent focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                  <label htmlFor="institution"className="leading-7 text-sm text-gray-600">University</label>
+                  <select list="institutions" type="text" id="institution" name="institution" required={true} onChange={handleChange} value={formData.institution} className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-transparent focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
                     <option value="UR Huye"> University of Rwanda - Huye</option>
                     <option value="UR Rwamagana">University of Rwanda - Rwamagana</option>
                     <option value="Mount Kigali University">Mount Kigali UNited</option>
@@ -68,6 +62,12 @@ export default function Register(){
           <div className="relative flex-grow w-full">
             <label htmlFor="otherProfile"className="leading-7 text-sm text-gray-600">Faculty/Department/Profession</label>
             <input type="text" id="otherProfile" name="otherProfile" required={true} onChange={handleChange} value={formData.otherProfile} className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-transparent focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"/>
+          </div>
+        )}
+        { formData.profile === "Registered Nurse" && (
+          <div className="relative flex-grow w-full">
+            <label htmlFor="institution"className="leading-7 text-sm text-gray-600">Institution</label>
+            <input type="text" id="institution" name="institution" required={true} onChange={handleChange} value={formData.institution} className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-transparent focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"/>
           </div>
         )}
       <div className="relative flex flex-col w-full h-20 justify-end">
