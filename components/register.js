@@ -66,12 +66,13 @@ export default function Register(){
         )}
         { formData.profile === "other" && (
           <div className="relative flex-grow w-full">
-            <label htmlFor="otherProfile"className="leading-7 text-sm text-gray-600">Faculty/Deprtment/Profession</label>
+            <label htmlFor="otherProfile"className="leading-7 text-sm text-gray-600">Faculty/Department/Profession</label>
             <input type="text" id="otherProfile" name="otherProfile" required={true} onChange={handleChange} value={formData.otherProfile} className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-transparent focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"/>
           </div>
         )}
       <div className="relative flex flex-col w-full h-20 justify-end">
-        <div className="flex justify-between">
+        <div className="flex justify-between gap-4">
+            <Link href="/" onClick={handleSubmit} className="text-white w-full bg-gray-500 border-0 py-2 px-8 focus:outline-none hover:bg-gray-600 rounded text-lg font-bold">Home</Link>
             <button onClick={handleSubmit} className="text-white w-full bg-green-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg font-bold">Register</button>
         </div>
       </div>
