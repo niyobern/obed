@@ -14,14 +14,14 @@ export default function TeamComponent(){
               <div className="font-bold text-xl mb-2"><span className="uppercase">Mushinzimana</span> Obed</div>
               <p className="text-gray-700 text-base">President</p>
             </div>
-            <div className="flex gap-8 justify-center p-2">
-              <div className="group flex flex-col cursor-pointer gap-2">
+            <div className="flex gap-8 justify-center p-2 overflow-x-hidden">
+              <div className="group flex flex-col cursor-pointer gap-2 or order-2der-2">
                 <FaPhoneVolume color="green" size={18}/>
                 <a href="tel:0791163629" className="font-medium text-lg text-cyan-900 hidden group-hover:flex">0791 163 629</a>
               </div>
-              <div className="group flex flex-col cursor-pointer gap-2">
+              <div className="group flex flex-col cursor-pointer gap order-3 hover:order-1-2 order-3 hover:order-1">
                 <div className="group-hover:self-end"><AiTwotoneMail color="blue" size={20}/></div>
-                <a href="mailto:obed@restorehealthinitiaves.org" className="font-medium text-cyan-800 hidden group-hover:flex">obed@restorehealthinitiaves.org</a>
+                <a href="mailto:obed@restorehealthinitiaves.org" className="font-normal lg:font-medium text-xs md:text-sm lg:text-base break-all text-cyan-800 hidden group-hover:flex">obed@restorehealthinitiaves.org</a>
               </div>
             </div>
           </div>            
@@ -33,13 +33,13 @@ export default function TeamComponent(){
               <p className="text-gray-700 text-base">Vice President</p>
             </div>
             <div className="flex gap-8 justify-center p-2">
-              <div className="group flex flex-col cursor-pointer gap-2">
+              <div className="group flex flex-col cursor-pointer gap-2 order-2">
                 <FaPhoneVolume color="green" size={18}/>
                 <a href="tel:0723104116" className="font-medium text-lg text-cyan-900 hidden group-hover:flex">0723 104 116</a>
               </div>
-              <div className="group flex flex-col cursor-pointer gap-2">
+              <div className="group flex flex-col cursor-pointer gap-2 order-3 hover:order-1">
                 <div className="group-hover:self-end"><AiTwotoneMail color="blue" size={20}/></div>
-                <a href="mailto:emmanuel@restorehealthinitiaves.org" className="font-medium text-cyan-800 hidden group-hover:flex">emmanuel@restorehealthinitiaves.org</a>
+                <a href="mailto:emmanuel@restorehealthinitiaves.org" className="font-normal lg:font-medium text-xs md:text-sm lg:text-base break-all text-cyan-800 hidden group-hover:flex">emmanuel@restorehealthinitiaves.org</a>
               </div>
             </div>
           </div>                         
@@ -51,13 +51,13 @@ export default function TeamComponent(){
               <p className="text-gray-700 text-base">Project Officer</p>
             </div>
             <div className="flex gap-8 justify-center p-2">
-              <div className="group flex flex-col cursor-pointer gap-2">
+              <div className="group flex flex-col cursor-pointer gap-2 order-2">
                 <FaPhoneVolume color="green" size={18}/>
                 <a href="tel:0738591124" className="font-medium text-lg text-cyan-900 hidden group-hover:flex">0738 591 124</a>
               </div>
-              <div className="group flex flex-col cursor-pointer gap-2">
+              <div className="group flex flex-col cursor-pointer gap-2 order-3 hover:order-1">
                 <div className="group-hover:self-end"><AiTwotoneMail color="blue" size={20}/></div>
-                <a href="mailto:claudette@restorehealthinitiaves.org" className="font-medium text-cyan-800 hidden group-hover:flex">claudette@restorehealthinitiaves.org</a>
+                <a href="mailto:claudette@restorehealthinitiaves.org" className="font-normal lg:font-medium text-xs md:text-sm lg:text-base break-all text-cyan-800 hidden group-hover:flex">claudette@restorehealthinitiaves.org</a>
               </div>
             </div>
           </div>   
@@ -71,13 +71,13 @@ export default function TeamComponent(){
               <p className="text-gray-700 text-base">Secretary</p>
             </div>
             <div className="flex gap-8 justify-center p-2">
-              <div className="group flex flex-col cursor-pointer gap-2">
+              <div className="group flex flex-col cursor-pointer gap-2 order-2">
                 <FaPhoneVolume color="green" size={18}/>
                 <a href="tel:0783025023" className="font-medium text-lg text-cyan-900 hidden group-hover:flex">0783 025 023</a>
               </div>
-              <div className="group flex flex-col cursor-pointer gap-2">
+              <div className="group flex flex-col cursor-pointer gap-2 order-3 hover:order-1">
                 <div className="group-hover:self-end"><AiTwotoneMail color="blue" size={20}/></div>
-                <a href="mailto:sylivie@restorehealthinitiaves.org" className="font-medium text-cyan-800 hidden group-hover:flex">sylivie@restorehealthinitiaves.org</a>
+                <a href="mailto:sylivie@restorehealthinitiaves.org" className="font-normal lg:font-medium text-xs md:text-sm lg:text-base break-all text-cyan-800 hidden group-hover:flex">sylivie@restorehealthinitiaves.org</a>
               </div>
             </div>
           </div>
@@ -89,13 +89,13 @@ export default function TeamComponent(){
               <p className="text-gray-700 text-base">Communication Officer</p>
             </div>
             <div className="flex gap-8 justify-center p-2">
-              <div className="group flex flex-col cursor-pointer gap-2">
+              <div className="group flex flex-col cursor-pointer gap-2 order-2">
                 <FaPhoneVolume color="green" size={18}/>
                 <a href="tel:0721115090" className="font-medium text-lg text-cyan-900 hidden group-hover:flex">0721 115 090</a>
               </div>
-              <div className="group flex flex-col cursor-pointer gap-2">
+              <div className="group flex flex-col cursor-pointer gap-2 order-3 hover:order-1">
                 <div className="group-hover:self-end"><AiTwotoneMail color="blue" size={20}/></div>
-                <a href="mailto:eric@restorehealthinitiaves.org" className="font-medium text-cyan-800 hidden group-hover:flex">eric@restorehealthinitiaves.org</a>
+                <a href="mailto:eric@restorehealthinitiaves.org" className="font-normal lg:font-medium text-xs md:text-sm lg:text-base break-all text-cyan-800 hidden group-hover:flex">eric@restorehealthinitiaves.org</a>
               </div>
             </div>
           </div> 
