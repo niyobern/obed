@@ -15,6 +15,10 @@ export default function Register(){
     }
     function handleSubmit(e){
         e.preventDefault()
+        if (typeof formData.otherProfile !== "undefined"){
+          formData.institution = formData.otherProfile
+          delete formData.otherProfile
+        }
         axios.post("https://nvb_backend-1-z3745144.deta.app/obed/users", formData)
         .then(() => alert("your details have been received"))
         .catch((err) => console.log(err))
