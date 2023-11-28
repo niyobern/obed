@@ -4,6 +4,7 @@ import Services from '@/components/services';
 import Benefits from '@/components/benefits';
 import TeamComponent from '@/components/team'
 import Contact from "@/components/contact";
+import Footer from "@/components/footer";
 
 export default function Index() {
   return (
@@ -20,7 +21,8 @@ export default function Index() {
         <VM/>
       </div>
       <div id="team" className="p-2 md:p-12 lg:p-16"><TeamComponent/></div>
-      <Contact/>
+      <div className="w-full px-2 md:px-12 lg:px-16"><Contact/></div>
+      <Footer/>
     </main>
   )
 }
