@@ -76,7 +76,7 @@ export default function Register(){
         )}
       <div className="relative flex flex-col w-full h-20 justify-end">
         <div className="flex justify-between gap-4">
-            <Link href="/" onClick={handleSubmit} className="text-white w-full bg-gray-500 border-0 py-2 px-8 focus:outline-none hover:bg-gray-600 rounded text-lg font-bold">Home</Link>
+            <Link href="/" className="text-white w-full bg-gray-500 border-0 py-2 px-8 focus:outline-none hover:bg-gray-600 rounded text-lg font-bold">Home</Link>
             <button onClick={handleSubmit} className="text-white w-full bg-green-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg font-bold">Register</button>
         </div>
       </div>

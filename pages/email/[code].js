@@ -1,7 +1,7 @@
 import Register from '@/components/register';
 import { useState } from 'react';
 import Image from 'next/image';
-import Logo from '../public/images/logo.png'
+import Logo from '../../public/images/logo.png'
 
 export default function Email() {
   const [formData, setFormData] = useState({})
