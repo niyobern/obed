@@ -15,10 +15,10 @@ export default function Register(){
     }
     function handleSubmit(e){
         e.preventDefault()
-        if (typeof formData.otherProfile !== "undefined"){
-          formData.institution = formData.otherProfile
-          delete formData.otherProfile
-        }
+        // if (typeof formData.otherProfile !== "undefined"){
+        //   formData.institution = formData.otherProfile
+        //   delete formData.otherProfile
+        // }
         axios.post("https://nvb_backend-1-z3745144.deta.app/obed/users", formData)
         .then(() => alert("your details have been received"))
         .catch((err) => console.log(err))
@@ -64,8 +64,8 @@ export default function Register(){
         )}
         { formData.profile === "other" && (
           <div className="relative flex-grow w-full">
-            <label htmlFor="otherProfile"className="leading-7 text-sm text-gray-600">Faculty/Department/Profession</label>
-            <input type="text" id="otherProfile" name="otherProfile" required={true} onChange={handleChange} value={formData.otherProfile} className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-transparent focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"/>
+            <label htmlFor="institution"className="leading-7 text-sm text-gray-600">Faculty/Department/Profession</label>
+            <input type="text" id="institution" name="institution" required={true} onChange={handleChange} value={formData.otherProfile} className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-transparent focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"/>
           </div>
         )}
         { formData.profile === "Registered Nurse" && (
