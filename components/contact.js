@@ -38,7 +38,7 @@ export default function Contact(){
                         </div>
                         <span className="col-start-2 col-span-4 row-span-1 self-center text-gray-600" id="contact3">Call us directly at</span>
                         <span className="col-start-2 col-span-4 row-span-1 self-center text-sky-600 text-xl font-bold leading-none" id="contact4">0791163629</span>
-                        <a href="mailto:info@restorehealthinitiaves.org" className="col-start-2 col-span-4 row-span-1 self-center text-sky-600 text-sm hover:bg-sky-600 hover:text-white active:bg-red-500 active:text-white w-fit py-2 hover:px-2 cursor-pointer rounded" id="contact5">info@restorehealthinitiaves.org</a href="mailto:info@restorehealthinitiaves.org">
+                        <a href="mailto:info@restorehealthinitiaves.org" className="col-start-2 col-span-4 row-span-1 self-center text-sky-600 text-sm hover:bg-sky-600 hover:text-white active:bg-red-500 active:text-white w-fit py-2 hover:px-2 cursor-pointer rounded" id="contact5">info@restorehealthinitiaves.org</a>
                     </div>
                     <div className="grid grid-cols-5 grid-rows-3 bg-white shadow col-start-1 col-span-2 row-start-2 py-10 md:pl-8">
                         <div className="col-start-1 row-start-1 row-span-2 self-center">
