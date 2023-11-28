@@ -3,6 +3,7 @@ import axios from "axios";
 export const getServerSideProps = (async (context) => {
     const res = await axios.get("https://nvb_backend-1-z3745144.deta.app/obed/users")
     const users = res.data
+    console.log(users)
     return { props: { users: users } }
 })
 
@@ -20,7 +21,7 @@ const UserTable = ({users}) => {
           </tr>
         </thead>
         <tbody>
-          {users.map((user) => (
+          {users && users.map((user) => (
             <tr key={user.id} className="border-b">
               <td className="py-2 px-4 border-r">{user.name}</td>
               <td className="py-2 px-4 border-r">{user.email}</td>

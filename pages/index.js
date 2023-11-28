@@ -13,7 +13,7 @@ export default function Index() {
       <div className='hidden md:flex invisible w-full'><Hero/></div>
       <div className="p-4 md:py-0 md:px-16 flex flex-col gap-4 md:gap-8" id="about">
         <h1 className="text-center text-2xl font-bold">About Us</h1>
-        <p className="text-gray-800 text-justify text-xl">Welcome to RestoreHealth Initiatives—where students and healthcare providers unite to champion community-based interventions. We're passionate about proactive healthcare, encouraging healthy lifestyles, and improving access to quality services. Explore our initiatives to join our movement. Together, as students and healthcare advocates, let's make a lasting impact on community well-being.</p>
+        <p className="text-gray-800 text-justify text-xl">Welcome to RestoreHealth Initiatives—where students and healthcare providers unite to champion community-based interventions. We&apos;re passionate about proactive healthcare, encouraging healthy lifestyles, and improving access to quality services. Explore our initiatives to join our movement. Together, as students and healthcare advocates, let&apos;s make a lasting impact on community well-being.</p>
       </div>
       <Services/>
       <Benefits/>
