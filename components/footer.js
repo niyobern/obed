@@ -1,11 +1,10 @@
-import React from 'react'
+import React from 'react';
+import { MdEmail } from "react-icons/md";
 
 import {
     FaFacebook,
-    FaYoutube,
     FaInstagram,
     FaTwitter,
-    FaTwitch,
 } from 'react-icons/fa'
 
 const Footer = () => {
@@ -17,6 +16,7 @@ const Footer = () => {
             <FaFacebook />
             <FaInstagram />
             <FaTwitter />
+            <MdEmail />
         </div>
         </div>
     </div>

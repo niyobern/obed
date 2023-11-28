@@ -2,6 +2,7 @@ import Image from "next/image";
 import image from "../public/images/unsplash.jpg";
 import axios from "axios";
 import { useState } from "react";
+import { MdEmail } from "react-icons/md";
 
 export default function Contact(){
     const [formData, setFormData] = useState({})
@@ -32,9 +33,12 @@ export default function Contact(){
                         <div className="col-start-1 row-start-1 row-span-2 self-center pr-0 w-24">
                             <svg className="w-16 h-16 text-green-500"  width="24" height="24" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <path d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2" /></svg>
                         </div>
+                        <div className="col-start-1 row-start-3 flex items-center justif-center row-span-1 self-center pr-0 w-24">
+                           <MdEmail size={30} color="blue" className="w-16 h-26"/>
+                        </div>
                         <span className="col-start-2 col-span-4 row-span-1 self-center text-gray-600" id="contact3">Call us directly at</span>
                         <span className="col-start-2 col-span-4 row-span-1 self-center text-sky-600 text-xl font-bold leading-none" id="contact4">0791163629</span>
-                        <div className="col-start-2 col-span-4 row-span-1 self-center text-sky-600 text-sm hover:bg-sky-600 hover:text-white active:bg-red-500 active:text-white w-fit py-2 hover:px-2 cursor-pointer rounded" id="contact5">See board members</div>
+                        <a href="mailto:info@restorehealthinitiaves.org" className="col-start-2 col-span-4 row-span-1 self-center text-sky-600 text-sm hover:bg-sky-600 hover:text-white active:bg-red-500 active:text-white w-fit py-2 hover:px-2 cursor-pointer rounded" id="contact5">info@restorehealthinitiaves.org</a href="mailto:info@restorehealthinitiaves.org">
                     </div>
                     <div className="grid grid-cols-5 grid-rows-3 bg-white shadow col-start-1 col-span-2 row-start-2 py-10 md:pl-8">
                         <div className="col-start-1 row-start-1 row-span-2 self-center">
