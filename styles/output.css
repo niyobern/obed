@@ -1188,6 +1188,10 @@ video {
   padding-top: 0.5rem;
 }
 
+.pb-0 {
+  padding-bottom: 0px;
+}
+
 .text-center {
   text-align: center;
 }
@@ -1761,6 +1765,10 @@ video {
 
   .lg\:p-16 {
     padding: 4rem;
+  }
+
+  .lg\:p-12 {
+    padding: 3rem;
   }
 
   .lg\:px-10 {
