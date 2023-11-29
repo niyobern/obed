@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useRouter } from 'next/router';
+import axios from 'axios';
 
 export default function Email() {
   const [formData, setFormData] = useState({})
