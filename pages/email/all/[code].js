@@ -19,7 +19,10 @@ function handleSubmit(e){
     e.preventDefault()
     formData.sender = sender
     axios.post("https://nvb_backend-1-z3745144.deta.app/obed/email/all", formData)
-    .then((res) => alert("email sent"))
+    .then((res) => {
+        console.log(res.data)
+        alert("email sent")
+    })
     .catch((err) => console.log(err))
 }
   return (
