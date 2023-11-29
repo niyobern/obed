@@ -5,9 +5,7 @@ import axios from 'axios';
 export default function Email() {
   const [formData, setFormData] = useState({})
   const router = useRouter()
-  const slugs = router.query.code
-  const code = slugs[0]
-  const sender = slugs[1]
+  const sender = router.query.code
   function handleChange(e){
     const target = e.target
     const name = target.name
@@ -19,9 +17,7 @@ export default function Email() {
 }
 function handleSubmit(e){
     e.preventDefault()
-    if (formData.code !== code){
-        alert("invalid verification code")
-    }
+    formData.sender = code
     axios.post("https://nvb_backend-1-z3745144.deta.app/obed/reply", formData)
     .then(() => alert("Email Sent"))
     .catch((err) => console.log(err))

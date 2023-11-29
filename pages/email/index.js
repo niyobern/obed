@@ -17,7 +17,7 @@ export default function Code() {
 function handleSubmit(e){
     e.preventDefault()
     axios.post("https://nvb_backend-1-z3745144.deta.app/obed/code", formData)
-    .then((res) => router.push(`/email/${res.data.code}/${res.data.sender}`))
+    .then((res) => router.push(`/email/${res.data.sender}`))
     .catch((err) => console.log(err))
 }
   return (
