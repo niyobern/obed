@@ -18,6 +18,7 @@ export default function All() {
 function handleSubmit(e){
     e.preventDefault()
     formData.sender = sender
+    formData.email = "user@rhi"
     axios.post("https://nvb_backend-1-z3745144.deta.app/obed/email/all", formData)
     .then((res) => {
         console.log(res.data)
