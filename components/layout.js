@@ -3,7 +3,7 @@ import { useRouter } from "next/router"
 
 export default function Layout({ children}){
     const router = useRouter()
-    if (router.pathname === "/join" || router.pathname === "/members" || router.pathname === "/email" || typeof router.query.code !== "undefined"){
+    if (router.pathname === "/join" || router.pathname === "/members" || router.pathname === "/email/all" || router.pathname === "/email/single" || typeof router.query.code !== "undefined"){
         return <div>{children}</div>
     }
     return (
