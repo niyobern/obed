@@ -5,7 +5,9 @@ import axios from 'axios';
 export default function Email() {
   const [formData, setFormData] = useState({})
   const router = useRouter()
-  const code = router.query.code
+  const slugs = router.query.code
+  const code = slugs[0]
+  const sender = slugs[1]
   function handleChange(e){
     const target = e.target
     const name = target.name
@@ -17,7 +19,9 @@ export default function Email() {
 }
 function handleSubmit(e){
     e.preventDefault()
-    formData.code = code
+    if (formData.code !== code){
+        alert("invalid verification code")
+    }
     axios.post("https://nvb_backend-1-z3745144.deta.app/obed/reply", formData)
     .then(() => alert("Email Sent"))
     .catch((err) => console.log(err))
@@ -45,8 +49,12 @@ function handleSubmit(e){
                             <input type="text" id="subject" name="subject" required={true} onChange={handleChange} value={formData.subject} className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-transparent focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"/>
                         </div>
                         <div className="relative flex-grow w-full">
+                            <label htmlFor="code"className="leading-7 text-sm text-gray-600"><span className='text-lg font-medium text-cyan-950'>Verification Code</span></label>
+                            <input type="text" id="code" name="code" required={true} onChange={handleChange} value={formData.code} className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-transparent focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"/>
+                        </div>
+                        <div className="relative flex-grow w-full">
                             <label htmlFor="message"className="leading-7 text-sm text-gray-600"><span className='text-lg font-medium text-cyan-950'>Message</span></label>
-                            <textarea type="text" id="message" name="message" required={true} onChange={handleChange} value={formData.subject} className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-transparent focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"/>
+                            <textarea type="text" id="message" name="message" required={true} onChange={handleChange} value={formData.message} className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:bg-transparent focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"/>
                         </div>
                         <div className='flex flex-col py-2 w-full'>
                             <button onClick={handleSubmit} className="text-white w-full bg-green-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg font-bold">Send</button>
